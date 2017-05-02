@@ -6,6 +6,15 @@
 * Convert the dataset from SRA -> FASTQ format
 * Find and download a genome sequence from NCBI
 * Create a bowtie index from the genome sequence (necessary to map reads to it)
+* Map reads in the dataset to the genome 
+* De-novo assemble non-mapping reads (to assemble viral genome)
+* Map reads to the draft viral genome to validate assembly
+
+Other/todo:
+
+* FASTQC
+* read trimming
+* QUAST
 
 
 ## Download an SRA dataset
