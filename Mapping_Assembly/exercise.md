@@ -1,4 +1,6 @@
-# In this exercise, we will de novo assemble a viral genome from a publically available dataset and will use read mapping to validate our assembly.  We will:
+# Mapping and Assembly
+
+## In this exercise, we will de novo assemble a viral genome from a publically available dataset and will use read mapping to validate our assembly.  We will:
 
 * Download a dataset from the SRA
 * Convert the dataset from SRA -> FASTQ format
@@ -17,17 +19,22 @@ First, let's setup a directory (folder) in which to work.  Lines that start with
 ```
 # change (move) to your home directory, if not already there
 cd
+
 # make a new directory
 mkdir boa_sra
+
 # move to that directory
 cd boa_sra
+
+# double check you are in the directory you think you are:
+pwd
 ```
 
-To get the dataset, open a browser and enter this address:
+To get the dataset, open a browser and enter this address, the pubmed page for the dataset's paper:
 
 https://www.ncbi.nlm.nih.gov/pubmed/25993603
 
-Scroll down and find the 'Related information' section of the page.  Click on the SRA link.  This shows the 146 datasets associated with this paper.  Search for `snake_7`.  Note that the reads in this dataset are already trimmed.  Note the run # (SRR #) for this dataset: SRR1984309
+Scroll down and find the 'Related information' section of the bottom right of the page.  Click on the SRA link.  This shows the 146 datasets associated with this paper.  Search for `snake_7`.  Note that the reads in this dataset are already trimmed.  Note the run # (SRR #) for this dataset: SRR1984309
 
 To download the dataset to your computer, you can run this command from your terminal window:
 
