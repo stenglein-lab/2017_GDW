@@ -97,18 +97,18 @@ The dataset we downloaded is from boa constrictor liver RNA.  We are going to ma
 #### As is usually the case in bioinformatics, there is more than one way to do what we want:
 
 * Option 1: Download from website using browser
- * download sequence from NCBI website
- * Send->complete record->file->format[fasta]
- * Move this FASTA file to your ~/boa_sra directory using the Finder or the command line
+  * download sequence from NCBI website
+  * Send->complete record->file->format[fasta]
+  * Move this FASTA file to your ~/boa_sra directory using the Finder or the command line
 
 * Option 2: download the sequence in Geneious.  
- * Copy the accession # from your browswer page.  
- * Open Geneious.  Goto the NCBI->Nucleotide section.  
- * Search for the accession (NC_007398.1) .  
- * Create a new folder in Geneious.  
- * Drag the boa mtDNA sequence to this new folder.
- * Note the nice annotation.
- * Export the sequence in FASTA format.  File->Export->Selected Documents->Fasta sequences/alignment format.  Click through options.  
+  * Copy the accession # from your browswer page.  
+  * Open Geneious.  Goto the NCBI->Nucleotide section.  
+  * Search for the accession (NC_007398.1) .  
+  * Create a new folder in Geneious.  
+  * Drag the boa mtDNA sequence to this new folder.
+  * Note the nice annotation.
+  * Export the sequence in FASTA format.  File->Export->Selected Documents->Fasta sequences/alignment format.  Click through options.  
 
 #### Create a bowtie index
 
