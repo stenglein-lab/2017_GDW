@@ -120,8 +120,7 @@ you should see a file named GCF_000151865.2_Ttru_1.4_genomic.fna.gz
 ls -lh 
 ```
 
-the .gz file extension means this file is gzipped (compressed)
-decompress it using gunzip
+The .gz file extension means this file is gzipped (compressed). Decompress it using gunzip:
 ```
 gunzip GCF_000151865.2_Ttru_1.4_genomic.fna.gz 
 ```
@@ -135,10 +134,11 @@ ls -lh
 
 Note that the file went from ~700 Mb to ~2.4 Gb after decompression.  
 
+
 ### Download the dolphin mitochondrial genome
 
-** We could align reads to the entire dolphin genome, but that would take a time longer than we have for this workshop **
-** Instead, we'll align reads to the dolphin mtDNA genome **
+**We could align reads to the entire dolphin genome, but that would take a time longer than we have for this workshop**
+**Instead, we'll align reads to the dolphin mtDNA genome**
 
 Return to the NCBI Genome bottlenosed dolphin page:
 
