@@ -51,9 +51,9 @@ double check you are in the directory you think you are:
 pwd
 ```
 
-To get the dataset, we will use the fastq-dump tool, part of the [SRA toolkit](https://www.ncbi.nlm.nih.gov/books/NBK158900/).
+To get the dataset, we will use the fastq-dump tool, part of the [SRA toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc). 
 
-To run fasta-dump, you just need to specify the run # (SRR# or ERR#) of the dataset you want.  Our run # is SRR1984309 
+fastq-dump downloads an SRA dataset.  To run fasta-dump, you just need to specify the run # (the SRR#) of the dataset you want.  Our run # is SRR1984309 
 
 The --split-files option of the command will create separate, synchronized files for paired reads
 
@@ -62,21 +62,19 @@ The --split-files option of the command will create separate, synchronized files
 fastq-dump SRR1984309 --split-files
 ```
 
-Confirm that you downloaded the files.  You should see files named ERR1938563_1.fastq and ERR1938563_2.fastq
+Confirm that you downloaded the files.  You should see files named SRR1984309_1.fastq and SRR1984309_2.fastq
 
 ```
 ls -lh
 ```
-
-- How big are the files?  (In Mb?)
 
 Have a look at the first 20 lines of the fastq files using the head command
 ```
 head -20 SRR1984309_1.fastq SRR1984309_2.fastq
 ```
 
-- What information is contained on each of the 4-lines that make up each sequence?  (See: [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format))  
-- The quality scores for this dataset are in Illumina 1.8+ format.  What is the maximum quality score for each basecall?  How does that relate to the estimated probability that a basecall is wrong?
+- What is on each of the 4-lines that make up each sequence?  (See: [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format))  
+- The quality scores for this dataset are in Illumina 1.9+ format.  What is the maximum quality score for each basecall?  How does that relate to the estimated probability that a basecall is wrong?
 - How many reads are in each file?  (Hint: the `wc -l` command, which will tell you the number of lines in the file)
 
 
@@ -87,9 +85,11 @@ head -20 SRR1984309_1.fastq SRR1984309_2.fastq
 
 [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is a tool that: 
 
-> FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis
+> ... aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis
 
-FastQC can be used via a graphical interface or via the command line.  On your laptops, the FastQC graphical interface is in: ~/Desktop/GDW_Apps/FastQC
+Performing a quick check like this of your data is one of the first things you'll want to do when you receive your new sequencing data (or when you download a dataset from an online repository like the SRA).
+
+FastQC can be used via a graphical interface or via the command line.  On your laptops, the FastQC graphical interface is on the Desktop in: /GDW_Apps/FastQC
 
 Navigate to that folder and open FastQC.  Then open the fastq files you downloaded from the SRA.  FastQC will take a couple seconds to analyze them.
 
@@ -108,7 +108,8 @@ We will run this command to trim our reads:
 ```
 java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar PE  \
 	SRR1984309_1.fastq SRR1984309_2.fastq \
-	SRR1984309_1_trimmed.fastq SRR1984309_1_trimmed_unpaired.fastq SRR1984309_2_trimmed.fastq SRR1984309_2_trimmed_unpaired.fastq \
+	SRR1984309_1_trimmed.fastq SRR1984309_1_trimmed_unpaired.fastq \
+	SRR1984309_2_trimmed.fastq SRR1984309_2_trimmed_unpaired.fastq \
 	ILLUMINACLIP:../Desktop/GDW_Apps/Trimmomatic-0.36/adapters/NexteraPE-PE.fa:2:30:10 \
 	LEADING:20 TRAILING:20 \
 	SLIDINGWINDOW:4:20 \
@@ -120,19 +121,20 @@ _Note that the `\` character at the end of lines allows you to perform a multi-l
 
 
 Breaking this down:
-- Remove Nextera adapters (ILLUMINACLIP:NexteraPE-PE.fa:2:30:10)
+- Names of input and output files: SRR1984309_1.fastq etc.    
+- Remove Nextera adapters (ILLUMINACLIP:...NexteraPE-PE.fa:2:30:10)
 - Remove leading low quality or N bases (below quality 20) (LEADING:20)
 - Remove trailing low quality or N bases (below quality 20) (TRAILING:20)
 - Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 20 (SLIDINGWINDOW:4:20)
 - Drop reads shorter than 60 bases long (MINLEN:60)
 
-After you've completed trimming, look to see what files exist in your directory:
+After you've completed trimming, look to see that the trimmed files exist in your directory:
 
 ```
 ls -lh
 ```
 
-- how many sequences are the trimmed fastq files?
+- how many sequences are in the trimmed fastq files?
 
 Open your trimmed fastq files in FastQC.  
 
@@ -145,33 +147,115 @@ Note: There are other trimming tools that you may find easier to use, such as [c
 
 ### Download the boa constrictor (mtDNA) genome.
 
-The dataset we downloaded is from boa constrictor liver RNA.  We are going to map the reads in the dataset to the boa constrictor mtDNA genome sequence to demonstrate read mapping.  We'll use the [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) mapper.
+The dataset we downloaded is from boa constrictor liver RNA.  We are going to map the reads in the dataset to the boa constrictor mtDNA genome sequence to demonstrate read mapping.  We'll use the [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) mapper to do this in tomorrow's exercises.
 
-#### First we need to actually get the genome sequence to which we will map:
+First, we need to *find* the boa constrictor genome.  As usual, there are few ways we could go about this:
 
-* Goto NCBI Taxonomy database: https://www.ncbi.nlm.nih.gov/taxonomy
-* Search for "boa constrictor"
-* Click on boa constrictor link
-* Click on genome (1) link
-*
-* Click on 'See also 1 organelle- and plasmid-only records matching your search/
-* Click on 'NC_007398.1' RefSeq link
+1. navigate through the NCBI [Taxonomy database](https://www.ncbi.nlm.nih.gov/taxonomy/)
+2. navigate through the NCBI [Genome database](https://www.ncbi.nlm.nih.gov/genome/)
+3. navigate through another genome database, like [Ensembl](http://www.ensembl.org/index.html) or [UCSC](https://genome.ucsc.edu/) 
+4. google 'boa constrictor genome sequence'  (not a terrible way to do it)
 
-#### As is usually the case in bioinformatics, there is more than one way to do what we want:
+We will go through the NCBI Taxonomy database.  Navigate to:
+
+https://www.ncbi.nlm.nih.gov/taxonomy/
+
+* Search for `boa constrictor`.  
+* Click on Boa constrictor link, then click the Boa constrictor link again
+* You should see a table in the upper right corner showing linked records in various NCBI (Entrez) databases.
+* Click on the `Genome (1)` link in that table to go to the boa constrictor records in the NCBI Genome database 
+
+* The linked page should say 'No items found', because the boa constrictor genome isn't actually in the NCBI Genome database.  However, there is a mitochondrial genome...
+* Click on "See also 1 organelle- and plasmid-only records matching your search"
+* In the Replicon Info table, note the link to the boa constrictor mtDNA genome sequence (NC_007398.1)
+* Click on this 'NC_007398.1' RefSeq link
+
+Now we need to download the sequence.  Again, there is more than one way to do this:
 
 * Option 1: Download from website using browser
   * download sequence from NCBI website
   * Send->complete record->file->format[fasta]
   * Move this FASTA file to your ~/boa_sra directory using the Finder or the command line
 
-* Option 2: download the sequence in Geneious.  
-  * Copy the accession # from your browswer page.  
-  * Open Geneious.  Goto the NCBI->Nucleotide section.  
-  * Search for the accession (NC_007398.1) .  
-  * Create a new folder in Geneious.  
-  * Drag the boa mtDNA sequence to this new folder.
-  * Note the nice annotation.
-  * Export the sequence in FASTA format.  File->Export->Selected Documents->Fasta sequences/alignment format.  Click through options.  
+Download the sequence in Genbank format too (Send->complete record->file->format[GenBank]).  
+
+Note that the downloaded files have unhelpful names: `sequence.fasta` and `sequence.gb` or similar.  Move these files into your gdw_working folder and rename them something useful:
+
+
+make sure you are in the gdw_working folder
+```
+pwd
+```
+
+use the mv command to move and rename the files
+```
+mv ~/Downloads/sequence.fasta boa_mtDNA.fasta
+mv ~/Downloads/sequence.gb boa_mtDNA.gb
+```
+
+We want these files in Geneious too.  Drag them into Geneious:  
+   - Create a new folder in Geneious 
+   - Drag and drop these files into Geneious
+
+Note that the Genbank format file has annotation associated with it.
+
+
+
+
+### Time permitting: Download the dolphin genome
+
+There isn't a boa constrictor genome in NCBI.  Let's download a bacterial genome instead: that of _Chlamydia psittaci_(https://en.wikipedia.org/wiki/Chlamydophila_psittaci).  This will allow us to practice finding and downloading and processing a genome using slightly different approaches.
+
+To find the _C. psittaci_ genome, we will go through the NCBI Genome database.  Navigate to:
+
+https://www.ncbi.nlm.nih.gov/genome/
+
+Search for `Chlamydia psittaci`. This will take you to the genome overview page for this organism. 
+
+You will notice a number of things on this overview page: 
+- There are actually 61 C. psittaci genomes.  One of these has been designated a "Representative genome".  We'll download this one. 
+- There are a number of paths to the actual genome sequence(s).  One easy one is at the top of the page, where therea are links to "Download sequences in FASTA format."  
+   - Hover over the link to download the genome sequence in FASTA format.  Note that this link points to this URL:
+
+ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/204/255/GCF_000204255.1_ASM20425v1/GCF_000204255.1_ASM20425v1_genomic.fna.gz
+
+[FTP](https://en.wikipedia.org/wiki/File_Transfer_Protocol) is a protocol for transferring files between computers.
+
+If you click on this link, you can download it to your laptop through your browser.  You can also download it directly from the command line using a utility like [curl](https://en.wikipedia.org/wiki/CURL).  Open your browser and download the C. psittaci genome using curl:
+```
+curl -O ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/204/255/GCF_000204255.1_ASM20425v1/GCF_000204255.1_ASM20425v1_genomic.fna.gz
+```
+
+confirm you've downloaded the genome sequence
+you should see a file GCF_000204255.1_ASM20425v1_genomic.fna.gz
+```
+ls -lh 
+```
+
+the .gz file extension means this file is gzipped (compressed)
+decompress it using gunzip
+```
+gunzip GCF_000204255.1_ASM20425v1_genomic.fna.gz
+```
+
+the file should now be named GCF_000204255.1_ASM20425v1_genomic.fna.gz
+```
+ls -lh
+```
+
+You should see a file of 1.1 Mb 
+
+Look at the first 10 lines of the file:
+```
+head GCF_000204255.1_ASM20425v1_genomic.fna
+```
+
+
+#### Downloading genome annotation
+You will note at the top of the overview page that you can also download annotation for this genome, either as an annotated version of the genome (in Genbank format), or a file containing the annotations (in [GFF](https://en.wikipedia.org/wiki/General_feature_format), or tabular formats)
+
+- Download the annotated genome in Genbank format, and drag and drop it into Geneious.  
+
 
 ---
 
