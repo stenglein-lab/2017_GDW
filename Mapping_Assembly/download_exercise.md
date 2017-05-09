@@ -206,8 +206,8 @@ https://www.ncbi.nlm.nih.gov/genome/
 Search for `Chlamydia psittaci`. This will take you to the genome overview page for this organism. 
 
 You will notice a number of things on this overview page: 
-- There are actually 61 C. psittaci genomes.  One of these has been designated a "Representative genome".  We'll download this one. 
-- There are a number of paths to the actual genome sequence(s).  One easy one is at the top of the page, where therea are links to "Download sequences in FASTA format."  
+- There are actually 61 _C. psittaci_ genomes.  One of these has been designated a "Representative genome".  We'll download this one. 
+- There are a number of paths to the actual genome sequence(s).  One simple path is at the top of the page, where there are links to "Download sequences in FASTA format."  
    - Hover over the link to download the genome sequence in FASTA format.  Note that this link points to this URL:
 
 ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/204/255/GCF_000204255.1_ASM20425v1/GCF_000204255.1_ASM20425v1_genomic.fna.gz
@@ -219,19 +219,17 @@ If you click on this link, you can download it to your laptop through your brows
 curl -O ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/204/255/GCF_000204255.1_ASM20425v1/GCF_000204255.1_ASM20425v1_genomic.fna.gz
 ```
 
-confirm you've downloaded the genome sequence
-you should see a file GCF_000204255.1_ASM20425v1_genomic.fna.gz
+Confirm you've downloaded the genome sequence. You should see a file named: GCF_000204255.1_ASM20425v1_genomic.fna.gz.
 ```
 ls -lh 
 ```
 
-the .gz file extension means this file is gzipped (compressed)
-decompress it using gunzip
+The .gz file extension means this file is gzipped (compressed). Decompress it using gunzip:
 ```
 gunzip GCF_000204255.1_ASM20425v1_genomic.fna.gz
 ```
 
-the file should now be named GCF_000204255.1_ASM20425v1_genomic.fna.gz
+The file should now be named GCF_000204255.1_ASM20425v1_genomic.fna.gz
 ```
 ls -lh
 ```
