@@ -250,4 +250,11 @@ You will note at the top of the overview page that you can also download annotat
 - Download the annotated genome in Genbank format, and drag and drop it into Geneious.  
 
 
+
+
+
+
+---
+Footnotes
+
 <a name="myfootnote1">1</a>: The boa constrictor genome _was_ sequenced as part of the [Assemblathon 2 competition](https://www.ncbi.nlm.nih.gov/pubmed/23870653), and the (unannotated) assemblies can be found [here](http://gigadb.org/dataset/100060)
