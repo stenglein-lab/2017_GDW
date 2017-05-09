@@ -197,7 +197,7 @@ We want these files in Geneious too.  Drag them into Geneious:
 
 ### Download another genome a different way
 
-There isn't a boa constrictor genome in NCBI :cry:.  Let's download a bacterial genome instead: that of _Chlamydia psittaci_(https://en.wikipedia.org/wiki/Chlamydophila_psittaci).  This will allow us to practice finding and downloading and processing a genome using slightly different approaches.
+There isn't a boa constrictor genome in NCBI :cry:.  Let's download a bacterial genome instead: that of [_Chlamydia psittaci_](https://en.wikipedia.org/wiki/Chlamydophila_psittaci).  This will allow us to practice finding and downloading and processing a genome using slightly different approaches.
 
 To find the _C. psittaci_ genome, we will go through the NCBI Genome database.  Navigate to:
 
