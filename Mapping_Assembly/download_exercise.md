@@ -145,9 +145,9 @@ Note: There are other trimming tools that you may find easier to use, such as [c
 
 ---
 
-### Download the boa constrictor (mtDNA) genome.
+### Download the boa constrictor genome.
 
-The dataset we downloaded is from boa constrictor liver RNA.  We are going to map the reads in the dataset to the boa constrictor mtDNA genome sequence to demonstrate read mapping.  We'll use the [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) mapper to do this in tomorrow's exercises.
+The dataset we downloaded is from boa constrictor liver RNA.  We are going to map the reads in the dataset to the boa constrictor mtDNA genome sequence to demonstrate read mapping.  We'll do this in tomorrow's exercise.
 
 First, we need to *find* the boa constrictor genome.  As usual, there are few ways we could go about this:
 
@@ -160,24 +160,23 @@ We will go through the NCBI Taxonomy database.  Navigate to:
 
 https://www.ncbi.nlm.nih.gov/taxonomy/
 
-* Search for `boa constrictor`.  
-* Click on Boa constrictor link, then click the Boa constrictor link again
-* You should see a table in the upper right corner showing linked records in various NCBI (Entrez) databases.
-* Click on the `Genome (1)` link in that table to go to the boa constrictor records in the NCBI Genome database 
+- Search for `boa constrictor`.  
+- Click on Boa constrictor link, then click the Boa constrictor link again
+- You should see a table in the upper right corner showing linked records in various NCBI (Entrez) databases.
+- Click on the `Genome (1)` link in that table to go to the boa constrictor records in the NCBI Genome database 
 
-* The linked page should say 'No items found', because the boa constrictor genome isn't actually in the NCBI Genome database.  However, there is a mitochondrial genome...
-* Click on "See also 1 organelle- and plasmid-only records matching your search"
-* In the Replicon Info table, note the link to the boa constrictor mtDNA genome sequence (NC_007398.1)
-* Click on this 'NC_007398.1' RefSeq link
+- The linked page should say 'No items found', because the boa constrictor genome isn't actually in the NCBI Genome database.  However, there is a mitochondrial genome. Let's download that.
+- Click on "See also 1 organelle- and plasmid-only records matching your search"
+- In the Replicon Info table, note the link to the boa constrictor mtDNA genome sequence (NC_007398.1)
+- Click on this 'NC_007398.1' RefSeq link
 
-Now we need to download the sequence.  Again, there is more than one way to do this:
+Now we need to download the sequence.  We'll do this through the browser.  In the upper right hand corner of the page, note the 'Send' drop down 
 
-* Option 1: Download from website using browser
-  * download sequence from NCBI website
-  * Send->complete record->file->format[fasta]
-  * Move this FASTA file to your ~/boa_sra directory using the Finder or the command line
+- Click Send->Complete Record->File->Format[FASTA]->Create File
 
-Download the sequence in Genbank format too (Send->complete record->file->format[GenBank]).  
+You should have downloaded a fasta file of ~19 kb, named sequence.fasta, or something like that.
+
+Now download the sequence in GenBank format too.  Note that this file is larger (~42 kb), because it contains annotation as well as the actual sequence.
 
 Note that the downloaded files have unhelpful names: `sequence.fasta` and `sequence.gb` or similar.  Move these files into your gdw_working folder and rename them something useful:
 
@@ -187,22 +186,19 @@ make sure you are in the gdw_working folder
 pwd
 ```
 
-use the mv command to move and rename the files
+use the mv command to move and rename the files (_change if downloaded names are different_)
 ```
 mv ~/Downloads/sequence.fasta boa_mtDNA.fasta
 mv ~/Downloads/sequence.gb boa_mtDNA.gb
 ```
 
 We want these files in Geneious too.  Drag them into Geneious:  
-   - Create a new folder in Geneious 
-   - Drag and drop these files into Geneious
-
-Note that the Genbank format file has annotation associated with it.
+ - Create a new folder in Geneious 
+ - Drag and drop these files into Geneious
 
 
 
-
-### Time permitting: Download the dolphin genome
+### Download another genome a different way
 
 There isn't a boa constrictor genome in NCBI.  Let's download a bacterial genome instead: that of _Chlamydia psittaci_(https://en.wikipedia.org/wiki/Chlamydophila_psittaci).  This will allow us to practice finding and downloading and processing a genome using slightly different approaches.
 
