@@ -103,17 +103,17 @@ Trimmomatic has _a lot_ of options, described [here](http://www.usadellab.org/cm
 We will run this command to trim our reads:
 
 ```
-java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar PE  \ 
-     SRR1984309_1.fastq SRR1984309_2.fastq \ 
-	  -baseout SRR1984309_trimmed  \ 
-	  ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 \ 
-	  LEADING:20 TRAILING:20 \
-	  SLIDINGWINDOW:4:20 \ 
-	  MINLEN:60
+java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar PE  /
+	SRR1984309_1.fastq SRR1984309_2.fastq /
+	-baseout SRR1984309_trimmed  /
+	ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 /
+	LEADING:20 TRAILING:20 /
+	SLIDINGWINDOW:4:20 / 
+	MINLEN:60
 
 ```
 
-_Note that the `\` character at the end of lines allows you to perform a multi-line command at the linux command line._
+_Note that the `/` character at the end of lines allows you to perform a multi-line command at the linux command line._
 
 
 Breaking this down:
