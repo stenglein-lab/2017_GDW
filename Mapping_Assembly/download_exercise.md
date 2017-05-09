@@ -104,7 +104,7 @@ We will run this command to trim our reads:
 
 ```
 java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar PE  \ 
-     -basein SRR1984309_1.fastq SRR1984309_2.fastq \ 
+     SRR1984309_1.fastq SRR1984309_2.fastq \ 
 	  -baseout SRR1984309_trimmed  \ 
 	  ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 \ 
 	  LEADING:20 TRAILING:20 \
