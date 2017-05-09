@@ -145,7 +145,7 @@ Note: There are other trimming tools that you may find easier to use, such as [c
 
 ### Downloading the boa constrictor genome.
 
-The dataset we downloaded is from boa constrictor liver RNA.  We will map reads in the dataset to the boa constrictor genome sequence to demonstrate read mapping.  We'll do this in tomorrow's exercise.
+The dataset we downloaded was created by sequencing a library made from boa constrictor liver RNA.  We will map the reads in this dataset to the boa constrictor genome sequence to demonstrate read mapping in tomorrow's exercise.
 
 First, we need to *find* the boa constrictor genome.  As usual, there are few ways we could go about this:
 
@@ -169,7 +169,7 @@ Now we need to download the sequence.  We'll do this through the browser.  In th
 
 - Click Send->Complete Record->File->Format[FASTA]->Create File
 
-You should have downloaded a fasta file of ~19 kb, named sequence.fasta, or something like that.
+You should have downloaded a fasta file of ~19 kb, named sequence.fasta, or something like that.  You can output the contents of the file to the Terminal window using the cat command:
 
 Now download the sequence in GenBank format too.  Note that this file is larger (~42 kb), because it contains annotation as well as the actual sequence.
 
@@ -181,10 +181,21 @@ make sure you are in the gdw_working folder
 pwd
 ```
 
+Change to the gdw_working folder if not already there:
+```
+cd ~/gdw_working
+```
+
 use the mv command to move and rename the files (_change if downloaded names are different_)
 ```
-mv ~/Downloads/sequence.fasta boa_mtDNA.fasta
-mv ~/Downloads/sequence.gb boa_mtDNA.gb
+mv ~/Downloads/sequence.fasta ./boa_mtDNA.fasta
+mv ~/Downloads/sequence.gb ./boa_mtDNA.gb
+```
+
+You can use the cat (or less) commands to output the contents of these files:
+```
+cat boa_mtDNA.fasta
+cat boa_mtDNA.gb
 ```
 
 We want these files in Geneious too.  Drag them into Geneious:  
