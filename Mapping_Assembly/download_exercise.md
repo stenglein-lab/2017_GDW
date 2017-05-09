@@ -29,6 +29,9 @@ change (move) to your home directory, if not already there
 cd
 ```
 
+Hint: Typing command–+ in the terminal app will increase the font size.   
+
+
 make a new directory
 ```
 mkdir gdw_working
@@ -51,7 +54,7 @@ To run fasta-dump, you just need to specify the run # (SRR# or ERR#) of the data
 The --split-files option of the command will create separate, synchronized files for paired reads
 
 ```
-fastq-dump SRR1984039 --split-files
+fastq-dump SRR1984309 --split-files
 ```
 
 Confirm that you downloaded the files.  You should see files named ERR1938563_1.fastq and ERR1938563_2.fastq
@@ -66,29 +69,19 @@ How big are the files?  (In Mb?)
 
 Have a look at the first 20 lines of the fastq files using the head command
 ```
-head -20 SRR1984039_1.fastq SRR1984039_2.fastq
+head -20 SRR1984309_1.fastq SRR1984309_2.fastq
 ```
 
-How many reads are in each file?  (Hint: the `wc -l` command, which will tell you the number of lines in the file)
+- What information is contained on each of the 4-lines for each sequence?  (See: [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format))  
+- The quality scores for this dataset are in Illumina 1.8+ format.  What is the maximum quality score for each basecall?  How does that relate to the estimated probability that a basecall is wrong?
+- How many reads are in each file?  (Hint: the `wc -l` command, which will tell you the number of lines in the file)
 
 
 
-## Convert SRA->FASTQ
 
-SRA datasets arrive in SRA format.  We need them to be in a more usable format, like [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format).   
 
-We will use the [SRA toolkit](https://www.ncbi.nlm.nih.gov/books/NBK158900/) to convert from SRA to FASTQ.
 
-```
-# fastq-dump converts SRA->FASTQ
-fastq-dump --split-files SRR1984309.sra
 
-# rename files using the mv (move) command
-mv SRR1984309_1.fastq SRR1984309_R1.fastq
-mv SRR1984309_2.fastq SRR1984309_R2.fastq
-```
-
-*~1 sec*
 
 ## Download the boa constrictor (mtDNA) genome.
 
