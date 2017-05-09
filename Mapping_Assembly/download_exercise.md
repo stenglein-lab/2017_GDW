@@ -1,5 +1,4 @@
 # Downloading and Processing Datasets and Genomes exercise
----
 [GDW 2017](http://gdwworkshop.colostate.edu/)
 ---
 
