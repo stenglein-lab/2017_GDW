@@ -1,6 +1,7 @@
-# Downloading data from online databases
+# Downloading and Processing data exercise
+GDW 2017
 
-## In this exercise, we will download an NGS dataset and a genome sequence 
+## In this exercise, we will download an NGS dataset and a genome sequence and evaluate them
 
 * Download a dataset from the SRA
 * Use the FASTQC tool to assess the quality of the reads in the dataset
@@ -10,7 +11,7 @@
 
 ---
 
-### Download an SRA dataset
+### Downloading an SRA dataset
 
 We will download one of the NGS datasets reported in [this paper](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1004900)
 
@@ -80,7 +81,7 @@ head -20 SRR1984309_1.fastq SRR1984309_2.fastq
 ---
 
 
-### Inspect the files with FastQC
+### Using FastQC to evaluate quality of NGS data
 
 [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is a tool that: 
 
@@ -105,8 +106,8 @@ We will run this command to trim our reads:
 ```
 java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar PE  \
 	SRR1984309_1.fastq SRR1984309_2.fastq \
-	SRR1984309_1_trimmed.fastq SRR1984309_1_trimmed_unpaired.fastq SRR1984309_2_trimmed.fastq SRR1984309_2_trimmed_unpaired.fastq 
-	ILLUMINACLIP:~/Desktop/GDW_Apps/Trimmomatic-0.36/adapters/NexteraPE-PE.fa:2:30:10 \
+	SRR1984309_1_trimmed.fastq SRR1984309_1_trimmed_unpaired.fastq SRR1984309_2_trimmed.fastq SRR1984309_2_trimmed_unpaired.fastq \
+	ILLUMINACLIP:../Desktop/GDW_Apps/Trimmomatic-0.36/adapters/NexteraPE-PE.fa:2:30:10 \
 	LEADING:20 TRAILING:20 \
 	SLIDINGWINDOW:4:20 \
 	MINLEN:60
@@ -123,21 +124,24 @@ Breaking this down:
 - Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 20 (SLIDINGWINDOW:4:20)
 - Drop reads shorter than 60 bases long (MINLEN:60)
 
-After you've completed trimming, check to see what files exist in your directory now
+After you've completed trimming, look to see what files exist in your directory:
 
 ```
 ls -lh
 ```
 
-- how big are the trimmed files?
+- how many sequences are the trimmed fastq files?
 
-Rerun FastQC on your trimmed files.  Did the trimming remove Nextera adapters?
+Open your trimmed fastq files in FastQC.  
 
+- Did the quality of the basecalls improve?
+- Did the trimming remove Nextera adapters?
+
+Note: There are other trimming tools that you may find easier to use, such as [cutadapt](http://cutadapt.readthedocs.io/) 
 
 ---
 
-
-## Download the boa constrictor (mtDNA) genome.
+### Download the boa constrictor (mtDNA) genome.
 
 The dataset we downloaded is from boa constrictor liver RNA.  We are going to map the reads in the dataset to the boa constrictor mtDNA genome sequence to demonstrate read mapping.  We'll use the [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) mapper.
 
@@ -167,7 +171,9 @@ The dataset we downloaded is from boa constrictor liver RNA.  We are going to ma
   * Note the nice annotation.
   * Export the sequence in FASTA format.  File->Export->Selected Documents->Fasta sequences/alignment format.  Click through options.  
 
-#### Create a bowtie index
+---
+
+#### Creating a bowtie index
 
 Now we will create a bowtie2 index from our boa mtDNA sequence.  Indexing pre-processes a sequence to make it faster to map to later.
 
