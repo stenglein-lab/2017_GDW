@@ -156,19 +156,16 @@ First, we need to *find* the boa constrictor genome.  As usual, there are few wa
 3. navigate through another genome database, like [Ensembl](http://www.ensembl.org/index.html) or [UCSC](https://genome.ucsc.edu/) 
 4. google 'boa constrictor genome sequence'  (not a terrible way to do it)
 
-We will go through the NCBI Taxonomy database.  Navigate to:
+- Let's choose option 1, and go through the NCBI Taxonomy database.  Navigate to https://www.ncbi.nlm.nih.gov/taxonomy/
+   - Search for `boa constrictor`.  
+   - Click on Boa constrictor link, then click the Boa constrictor link again
+   - You should see a table in the upper right corner showing linked records in various NCBI (Entrez) databases.
+   - Click on the `Genome (1)` link in that table to go to the boa constrictor records in the NCBI Genome database 
 
-https://www.ncbi.nlm.nih.gov/taxonomy/
-
-- Search for `boa constrictor`.  
-- Click on Boa constrictor link, then click the Boa constrictor link again
-- You should see a table in the upper right corner showing linked records in various NCBI (Entrez) databases.
-- Click on the `Genome (1)` link in that table to go to the boa constrictor records in the NCBI Genome database 
-
-- The linked page should say 'No items found', because the boa constrictor genome isn't actually in the NCBI Genome database.  However, there is a mitochondrial genome. Let's download that.
-- Click on "See also 1 organelle- and plasmid-only records matching your search"
-- In the Replicon Info table, note the link to the boa constrictor mtDNA genome sequence (NC_007398.1)
-- Click on this 'NC_007398.1' RefSeq link
+   - The linked page should say 'No items found', because the boa constrictor genome isn't actually in the NCBI Genome database.  However, there is a mitochondrial genome. Let's download that.
+   - Click on "See also 1 organelle- and plasmid-only records matching your search"
+   - In the Replicon Info table, note the link to the boa constrictor mtDNA genome sequence (NC_007398.1)
+   - Click on this 'NC_007398.1' RefSeq link
 
 Now we need to download the sequence.  We'll do this through the browser.  In the upper right hand corner of the page, note the 'Send' drop down 
 
