@@ -196,6 +196,10 @@ You can use the cat (or less) commands to output the contents of these files:
 ```
 cat boa_mtDNA.fasta
 cat boa_mtDNA.gb
+
+# less allows you to page through files
+less boa_mtDNA.fasta
+less boa_mtDNA.gb
 ```
 
 We want these files in Geneious too.  Drag them into Geneious:  
