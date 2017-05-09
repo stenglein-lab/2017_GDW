@@ -229,17 +229,21 @@ The .gz file extension means this file is gzipped (compressed). Decompress it us
 gunzip GCF_000204255.1_ASM20425v1_genomic.fna.gz
 ```
 
-The file should now be named GCF_000204255.1_ASM20425v1_genomic.fna.gz
+The file should now be named GCF_000204255.1_ASM20425v1_genomic.fna.gz, which should be 1.1 Mb uncompressed
 ```
 ls -lh
 ```
-
-You should see a file of 1.1 Mb 
 
 Look at the first 10 lines of the file:
 ```
 head GCF_000204255.1_ASM20425v1_genomic.fna
 ```
+
+Look at the last 10 lines of the file:
+```
+tail GCF_000204255.1_ASM20425v1_genomic.fna
+```
+You can see that the file consists of a header line and the genome sequence, with no associated annotation.
 
 
 #### Downloading genome annotation
