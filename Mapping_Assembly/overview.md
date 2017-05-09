@@ -13,7 +13,7 @@
 
 [Bob's BLAST exercise]()
 
-[Mark's downloading exercise]()
+[Mark's downloading exercise](download_exercise.md)
 
 ### Monday 6/5/17
 
