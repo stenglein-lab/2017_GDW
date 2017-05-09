@@ -8,6 +8,7 @@
 * Find and download a genome sequence from NCBI
 
 
+---
 
 ### Download an SRA dataset
 
@@ -76,6 +77,8 @@ head -20 SRR1984309_1.fastq SRR1984309_2.fastq
 - How many reads are in each file?  (Hint: the `wc -l` command, which will tell you the number of lines in the file)
 
 
+---
+
 
 ### Inspect the files with FastQC
 
@@ -89,6 +92,7 @@ Navigate to that folder and open FastQC.  Then open the fastq files you download
 
 These datasets have already been pre-cleaned, so they look pretty good.  Note that there is possible Nextera adapter contamination towards the end of some reads.  This makes sense, because the libraries were made with the Nextera protocol.  In the next section, we will trim those off.
 
+---
 
 ### Read trimming with trimmomatic
 
@@ -99,9 +103,18 @@ Trimmomatic has _a lot_ of options, described [here](http://www.usadellab.org/cm
 We will run this command to trim our reads:
 
 ```
-java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar PE -basein SRR1984309 -baseout SRR1984309_trimmed  ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:60
+java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar PE  \ 
+     -basein SRR1984309_1.fastq SRR1984309_2.fastq \ 
+	  -baseout SRR1984309_trimmed  \ 
+	  ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 \ 
+	  LEADING:20 TRAILING:20 \
+	  SLIDINGWINDOW:4:20 \ 
+	  MINLEN:60
 
 ```
+
+_Note that the `\` character at the end of lines allows you to perform a multi-line command at the linux command line._
+
 
 Breaking this down:
 - Remove Nextera adapters (ILLUMINACLIP:NexteraPE-PE.fa:2:30:10)
@@ -109,6 +122,19 @@ Breaking this down:
 - Remove trailing low quality or N bases (below quality 20) (TRAILING:20)
 - Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 20 (SLIDINGWINDOW:4:20)
 - Drop reads shorter than 60 bases long (MINLEN:60)
+
+After you've completed trimming, check to see what files exist in your directory now
+
+```
+ls -lh
+```
+
+- how big are the trimmed files?
+
+Rerun FastQC on your trimmed files.  Did the trimming remove Nextera adapters?
+
+
+---
 
 
 ## Download the boa constrictor (mtDNA) genome.
