@@ -57,11 +57,10 @@ We will download the dataset using the fastq-dump tool, part of the [SRA toolkit
 To run fasta-dump, you just need to specify the run # (the SRR#) of the dataset you want.  Recall that our run # is SRR1984309. The --split-files option of the command will create 2, synchronized files for the paired reads
 
 ```
-# TODO: absolute path
 ~/Desktop/GDW_Apps/sratoolkit/bin/fastq-dump SRR1984309 --split-files
 ```
 
-Confirm that you downloaded the files.  You should see files named SRR1984309_1.fastq and SRR1984309_2.fastq
+Confirm that you downloaded the files.  You should see files named SRR1984309_1.fastq and SRR1984309_2.fastq that are each 44 Mb.
 
 ```
 ls -lh
@@ -73,8 +72,8 @@ head -20 SRR1984309_1.fastq SRR1984309_2.fastq
 ```
 
 - What is on each of the 4-lines that make up each sequence?  (See: [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format))  
-- The quality scores for this dataset are in Illumina 1.9+ format.  What is the maximum quality score for each basecall?  How does that relate to the estimated probability that a basecall is wrong?
-- How many reads are in each file?  (Hint: the `wc -l` command, which will tell you the number of lines in the file)
+- The quality scores for this dataset are in Illumina 1.9 format.  What is the maximum quality score for each basecall?  How does that relate to the estimated probability that a basecall is wrong?
+- How many reads are in each file?  (Hint: the `wc -l` command will tell you the number of lines in the file)
 
 
 ---
@@ -121,11 +120,11 @@ _Note that the `\` character at the end of lines allows you to perform a multi-l
 
 Breaking this down:
 - Names of input and output files: SRR1984309_1.fastq etc.    
-- Remove Nextera adapters (ILLUMINACLIP:...NexteraPE-PE.fa:2:30:10)
-- Remove leading low quality or N bases (below quality 20) (LEADING:20)
-- Remove trailing low quality or N bases (below quality 20) (TRAILING:20)
-- Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 20 (SLIDINGWINDOW:4:20)
-- Drop reads shorter than 60 bases long (MINLEN:60)
+- Trim Nextera adapter sequences (ILLUMINACLIP:...NexteraPE-PE.fa:2:30:10)
+- Remove low quality bases from the 5' ends of the reads (below quality 20) (LEADING:20)
+- Remove low quality bases from the 3' ends of the reads (below quality 20) (TRAILING:20)
+- Trim reads if internal low quality bases (SLIDINGWINDOW:4:20)
+- Remove reads shorter than 60 bases (MINLEN:60)
 
 After you've completed trimming, look to see that the trimmed files exist in your directory:
 
@@ -133,7 +132,7 @@ After you've completed trimming, look to see that the trimmed files exist in you
 ls -lh
 ```
 
-- how many sequences are in the trimmed fastq files?
+- how many reads remain in the trimmed fastq files?
 
 Open your trimmed fastq files in FastQC.  
 
@@ -144,9 +143,9 @@ Note: There are other trimming tools that you may find easier to use, such as [c
 
 ---
 
-### Download the boa constrictor genome.
+### Downloading the boa constrictor genome.
 
-The dataset we downloaded is from boa constrictor liver RNA.  We are going to map the reads in the dataset to the boa constrictor mtDNA genome sequence to demonstrate read mapping.  We'll do this in tomorrow's exercise.
+The dataset we downloaded is from boa constrictor liver RNA.  We will map reads in the dataset to the boa constrictor genome sequence to demonstrate read mapping.  We'll do this in tomorrow's exercise.
 
 First, we need to *find* the boa constrictor genome.  As usual, there are few ways we could go about this:
 
@@ -161,7 +160,7 @@ First, we need to *find* the boa constrictor genome.  As usual, there are few wa
    - You should see a table in the upper right corner showing linked records in various NCBI (Entrez) databases.
    - Click on the `Genome (1)` link in that table to go to the boa constrictor records in the NCBI Genome database 
 
-   - The linked page should say 'No items found', because the boa constrictor genome isn't actually in the NCBI Genome database.  However, there is a mitochondrial genome. Let's download that.
+   - The linked page should say 'No items found', because the boa constrictor genome isn't actually in the NCBI Genome database<sup>[1](#myfootnote1)</sup>.  However, there is a mitochondrial genome. Let's download that.
    - Click on "See also 1 organelle- and plasmid-only records matching your search"
    - In the Replicon Info table, note the link to the boa constrictor mtDNA genome sequence (NC_007398.1)
    - Click on this 'NC_007398.1' RefSeq link
@@ -251,3 +250,4 @@ You will note at the top of the overview page that you can also download annotat
 - Download the annotated genome in Genbank format, and drag and drop it into Geneious.  
 
 
+<a name="myfootnote1">1</a>: The boa constrictor genome _was_ sequenced as part of the [Assemblathon 2 competition](https://www.ncbi.nlm.nih.gov/pubmed/23870653), and the (unannotated) assemblies can be found [here](http://gigadb.org/dataset/100060)
