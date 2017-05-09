@@ -23,7 +23,7 @@
 
 [Mark's de novo assembly lecture]()
 
-[Mapping and de novo assembly exercise](mapping_exercise.md)
+[Mapping and de novo assembly exercise](mapping_assembly_exercise.md)
 
 
 
