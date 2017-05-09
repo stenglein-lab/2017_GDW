@@ -9,7 +9,7 @@
 
 
 
-#### Download an SRA dataset
+### Download an SRA dataset
 
 We will download one of the NGS datasets reported in [this paper](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1004900)
 
@@ -54,6 +54,7 @@ To run fasta-dump, you just need to specify the run # (SRR# or ERR#) of the data
 The --split-files option of the command will create separate, synchronized files for paired reads
 
 ```
+# TODO: absolute path
 fastq-dump SRR1984309 --split-files
 ```
 
@@ -63,24 +64,51 @@ Confirm that you downloaded the files.  You should see files named ERR1938563_1.
 ls -lh
 ```
 
-How big are the files?  (In Mb?)
-
-
+- How big are the files?  (In Mb?)
 
 Have a look at the first 20 lines of the fastq files using the head command
 ```
 head -20 SRR1984309_1.fastq SRR1984309_2.fastq
 ```
 
-- What information is contained on each of the 4-lines for each sequence?  (See: [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format))  
+- What information is contained on each of the 4-lines that make up each sequence?  (See: [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format))  
 - The quality scores for this dataset are in Illumina 1.8+ format.  What is the maximum quality score for each basecall?  How does that relate to the estimated probability that a basecall is wrong?
 - How many reads are in each file?  (Hint: the `wc -l` command, which will tell you the number of lines in the file)
 
 
 
+### Inspect the files with FastQC
+
+[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is a tool that: 
+
+> FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis
+
+FastQC can be used via a graphical interface or via the command line.  On your laptops, the FastQC graphical interface is in: ~/Desktop/GDW_Apps/FastQC
+
+Navigate to that folder and open FastQC.  Then open the fastq files you downloaded from the SRA.  FastQC will take a couple seconds to analyze them.
+
+These datasets have already been pre-cleaned, so they look pretty good.  Note that there is possible Nextera adapter contamination towards the end of some reads.  This makes sense, because the libraries were made with the Nextera protocol.  In the next section, we will trim those off.
 
 
+### Read trimming with trimmomatic
 
+[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) is a tool that can be used to trim low quality and adapter sequences from NGS reads.  It's always a good idea to trim raw NGS reads.
+
+Trimmomatic has _a lot_ of options, described [here](http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf)
+
+We will run this command to trim our reads:
+
+```
+java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar PE -basein SRR1984309 -baseout SRR1984309_trimmed  ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:60
+
+```
+
+Breaking this down:
+- Remove Nextera adapters (ILLUMINACLIP:NexteraPE-PE.fa:2:30:10)
+- Remove leading low quality or N bases (below quality 20) (LEADING:20)
+- Remove trailing low quality or N bases (below quality 20) (TRAILING:20)
+- Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 20 (SLIDINGWINDOW:4:20)
+- Drop reads shorter than 60 bases long (MINLEN:60)
 
 
 ## Download the boa constrictor (mtDNA) genome.
