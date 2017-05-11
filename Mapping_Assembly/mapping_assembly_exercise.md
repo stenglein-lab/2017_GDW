@@ -56,7 +56,9 @@ Note that this index building went very fast for a small genome like the boa mtD
 Now that we've created the index, we can map reads to it.  We'll map our Trimmomatic-trimmed paired reads to this sequence, as follows:
 
 ```
-bowtie2 -x boa_mtDNA_bt_index -q -1 SRR1984309_1_trimmed.fastq  -2 SRR1984309_2_trimmed.fastq --no-unal --threads 4 -S SRR1984309_mapped_to_boa_mtDNA.sam
+~/Desktop/GDW_Apps/bowtie2/bowtie2 -x boa_mtDNA_bt_index \
+   -q -1 SRR1984309_1_trimmed.fastq  -2 SRR1984309_2_trimmed.fastq \
+   --no-unal --threads 4 -S SRR1984309_mapped_to_boa_mtDNA.sam
 ```
 
 Let's deconstruct this command line: 
