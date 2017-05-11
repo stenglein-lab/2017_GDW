@@ -73,7 +73,7 @@ head -20 SRR1984309_1.fastq SRR1984309_2.fastq
 
 - What is on each of the 4-lines that make up each sequence?  (See: [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format))  
 - The quality scores for this dataset are in Illumina 1.9 format.  What is the maximum quality score for each basecall?  How does that relate to the estimated probability that a basecall is wrong?
-- How many reads are in each file?  (Hint: the `wc -l` command will tell you the number of lines in the file)
+- How many reads are in each file?  (Hint: the `wc -l name_of_file` command will tell you the number of lines in the file)
 
 
 ---
@@ -169,7 +169,7 @@ Now we need to download the sequence.  We'll do this through the browser.  In th
 
 - Click Send->Complete Record->File->Format[FASTA]->Create File
 
-You should have downloaded a fasta file of ~19 kb, named sequence.fasta, or something like that.  You can output the contents of the file to the Terminal window using the cat command:
+You should have downloaded a fasta file of ~19 kb, named sequence.fasta, or something like that.  
 
 Now download the sequence in GenBank format too.  Note that this file is larger (~42 kb), because it contains annotation as well as the actual sequence.
 
@@ -202,13 +202,16 @@ less boa_mtDNA.fasta
 less boa_mtDNA.gb
 ```
 
+Hint: press `space` to advance a page in less and press `q` to exit
+
+
 We want these files in Geneious too.  Drag them into Geneious:  
  - Create a new folder in Geneious 
  - Drag and drop these files into Geneious
 
 
 
-### Download another genome a different way
+### Time-permitting: Download another genome a different way
 
 There isn't a boa constrictor genome in NCBI :cry:.  Let's download a bacterial genome instead: that of [_Chlamydia psittaci_](https://en.wikipedia.org/wiki/Chlamydophila_psittaci).  This will allow us to practice finding and downloading and processing a genome using slightly different approaches.
 
