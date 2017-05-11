@@ -31,7 +31,7 @@ cd ~/gdw_working   # if necessary
 
 Now confirm that the boa constrictor mtDNA sequence file is there and in FASTA format: 
 ```
-ls -lh    # should see: NC_007398.fasta
+ls -lh    # should see: boa_mtDNA.fasta
 ```
 
 Now, we'll use the bowtie2-build indexing program to create the index.  This command takes 2 arguments: 
@@ -39,7 +39,7 @@ Now, we'll use the bowtie2-build indexing program to create the index.  This com
 (2) the name of the index (can be whatever you want)
 
 ```
-bowtie2-build NC_007398.fasta boa_mtDNA_bt_index 
+bowtie2-build boa_mtDNA.fasta boa_mtDNA_bt_index 
 ```
 
 Confirm that you built the index.  You should see a bunch of files named ending in bt2, like boa_mtDNA_bt_index.3.bt2
