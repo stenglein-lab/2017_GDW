@@ -172,9 +172,9 @@ Copy the first 3 contigs (the 3 longest contigs) and open a browser, navigate to
 - What are the sequences?  Are you confident in your conclusions?  Do they make sense?
 
 
-##### Additional time permitting exercises 
+#### Additional time permitting exercises 
 
-1. Assembly validation:
+*1. Assembly validation:*
 
 To quote [Miller et al](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2874646/), these contigs are only "putative reconstructions" of the sequences from which the reads derived.  How could we validate these sequences as being accurate?
 
@@ -184,10 +184,10 @@ Another way to validate an assembly is to re-map reads back to it using a mappin
 
 If time permits, use what you've learned and re-map reads back to these contigs.  To do this, you'll have to create a new bowtie index (e.g. of the 1st 2 or 3 contigs) using bowtie2-build, then use bowtie2 to map reads.  Then you can visualize the aligned reads in Geneious.  Can you find any problems with the assemblies?
 
-2. Sequence annotation
+*2. Sequence annotation*
 
 Another thing you could do is annotate the virus contigs.  Geneious is a great tool for doing things like finding ORFs in sequences and adding annotations, that can then be exported in GenBank format.
 
-3. Assemble the entire datasets
+*3. Assemble the entire datasets*
 
 You could also try assembling all of the reads in the datasets, not just the ones that didn't map to the boa constrictor genome.  This will take longer, but should be doable in a minute or two on your laptops.  What are the top contigs now?  What happened to the virus contigs?
