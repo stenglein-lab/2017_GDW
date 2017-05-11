@@ -111,9 +111,9 @@ Once you have the boa constrictor mitochondrial genome in a folder in Geneious, 
 
 ### De-novo assembly of non-mapping reads
 
-OK, now we've practiced mapping to a reference sequence.  Imagine instead, that we don't have a reference sequence.  In this case, we'll need to perform de novo assembly.  
+OK, now we've practiced mapping to a reference sequence.  Imagine instead that we don't have a reference sequence.  In that case, we'd need to perform de novo assembly.  
 
-As we discussed, there are a variety of de novo assemblers with different strengths and weaknesses.  We're going to use the [SPAdes assembler](http://cab.spbu.ru/software/spades/) to assemble the reads in our dataset that don't map to the boa constrictor genome. First, let's map the reads in our dataset to the _entire_ boa constrictor genome, not just the mitochondrial genome.
+There are a variety of de novo assemblers with different strengths and weaknesses.  We're going to use the [SPAdes assembler](http://cab.spbu.ru/software/spades/) to assemble the reads in our dataset that don't map to the boa constrictor genome. First, let's map the reads in our dataset to the _entire_ boa constrictor genome, not just the mitochondrial genome.
 
 The instructors have already downloaded an assembly of the boa constrictor genome from [here](http://gigadb.org/dataset/100060) and made a bowtie2 index, which can be found on your HDDs.  We could have you make an index yourself, but that would take a long time for a Gb genome like the boa constrictor's.  The boa constrictor genome index is named boa_constrictor_bt_index.
 
@@ -128,9 +128,29 @@ Now, we'll run bowtie2 to map reads to the entire boa genome.  This time we'll r
 2. We'll keep track of which reads _didn't_ map to the genome using the --un-conc option
 
 ```
-~/Desktop/GDW_Apps/bowtie2/bowtie2 -x boa_constrictor_bt_index \
+~/Desktop/GDW_Apps/bowtie2/bowtie2 -x boa_constrictor_bt_index --local \
    -q -1 SRR1984309_1_trimmed.fastq  -2 SRR1984309_2_trimmed.fastq \
    --no-unal --threads 4 -S SRR1984309_mapped_to_boa_genome.sam --un-conc SRR1984309_not_boa_mapped.fastq
+```
+
+You should see that 90% of the reads aligned to the boa constrictor genome sequence, leaving 10% in the files that contain the non-mapping reads: SRR1984309_not_boa_mapped.1.fastq and ....2.fastq
+
+We will use these non-mapping reads as input to our de novo SPAdes assembly.  Run SPAdes as follows:
+
+```
+~Desktop/GDW_Apps/SPAdes/bin/spades.py   -o SRR1984309_spades_assembly \
+	--pe1-1 SRR1984309_not_boa_mapping_1.fastq \
+	--pe1-2 SRR1984309_not_boa_mapping_2.fastq \
+	-m 12 -t 4
+```
+
+Command line options explained:
+```
+~Desktop/GDW_Apps/SPAdes/bin/spades.py   
+	-o SRR1984309_spades_assembly \   				# name of directory (folder) where SPAdes output will go
+	--pe1-1 SRR1984309_not_boa_mapping_1.fastq \	# name of read1 input file
+	--pe1-2 SRR1984309_not_boa_mapping_2.fastq \	# name of read2 input file
+	-m 12 -t 4   											# use 12 Gb of RAM and 4 cores 
 ```
 
 
