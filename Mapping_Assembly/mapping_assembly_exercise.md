@@ -159,9 +159,9 @@ SPAdes will output a bunch of status messages to the screen as it runs the assem
 
 After SPAdes finishes, there will be output files in the SRR1984309_spades_assembly folder.  The key ones are:
 
--contigs.fasta:   the assembled contigs in FASTA format
--scaffolds.fasta: scaffolds in FASTA format
--assembly_graph.fastg:   de bruijn graphs used to create contigs.  Can be visualized using a tool like [Bandage](https://rrwick.github.io/Bandage/)
+*contigs.fasta:   the assembled contigs in FASTA format
+*scaffolds.fasta: scaffolds in FASTA format
+*assembly_graph.fastg:   de bruijn graphs used to create contigs.  Can be visualized using a tool like [Bandage](https://rrwick.github.io/Bandage/)
 
 Let's look at the contigs in contigs.fasta.  Navigate to that file in the Finder and open it using a text editor like TextWrangler or TextEdit.
 
