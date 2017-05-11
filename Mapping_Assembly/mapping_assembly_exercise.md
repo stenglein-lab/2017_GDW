@@ -135,12 +135,14 @@ Now, we'll run bowtie2 to map reads to the entire boa genome.  This time we'll r
 
 You should see that 90% of the reads aligned to the boa constrictor genome sequence, leaving 10% in the files that contain the non-mapping reads: SRR1984309_not_boa_mapped.1.fastq and ....2.fastq
 
+How many non-mapping reads remain in these files?
+
 We will use these non-mapping reads as input to our de novo SPAdes assembly.  Run SPAdes as follows:
 
 ```
 ~/Desktop/GDW_Apps/SPAdes/bin/spades.py   -o SRR1984309_spades_assembly \
-	--pe1-1 SRR1984309_not_boa_mapping_1.fastq \
-	--pe1-2 SRR1984309_not_boa_mapping_2.fastq \
+	--pe1-1 SRR1984309_not_boa_mapped.1.fastq \
+	--pe1-2 SRR1984309_not_boa_mapped.2.fastq \
 	-m 12 -t 4
 ```
 
@@ -148,10 +150,12 @@ Command line options explained:
 ```
 ~/Desktop/GDW_Apps/SPAdes/bin/spades.py   
 	-o SRR1984309_spades_assembly \   		# name of directory (folder) where SPAdes output will go
-	--pe1-1 SRR1984309_not_boa_mapping_1.fastq \	# name of read1 input file
-	--pe1-2 SRR1984309_not_boa_mapping_2.fastq \	# name of read2 input file
+	--pe1-1 SRR1984309_not_boa_mapped.1.fastq \	# name of read1 input file
+	--pe1-2 SRR1984309_not_boa_mapped.2.fastq \	# name of read2 input file
 	-m 12 -t 4   					# use 12 Gb of RAM and 4 cores 
 ```
+
+SPAdes will output a bunch of status messages to the screen as it runs the assembly.  
 
 
 
