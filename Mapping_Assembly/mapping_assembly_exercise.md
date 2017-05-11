@@ -3,12 +3,7 @@
 GDW 2017
 ---
 
-### In this exercise, we will learn how to map reads to a genome, de novo assemble a viral genome, and use read mapping to validate our assembly.  We will:
-
-* Create a bowtie index from the genome sequence (necessary to map reads to it)
-* Map reads in the dataset to the genome 
-* De-novo assemble non-mapping reads (to assemble the viral genome)
-* Map reads to the draft viral genome to validate assembly
+### In this exercise, we will learn how to create an index from a reference sequence, then map reads to that reference sequence, and will perform a de novo assembly.  We'll:
 
 
 ### Create a bowtie index from the boa constrictor mitochondrial genome sequence
@@ -42,7 +37,7 @@ Now, we'll use the bowtie2-build indexing program to create the index.  This com
 ~/Desktop/GDW_Apps/bowtie2/bowtie2-build boa_mtDNA.fasta boa_mtDNA_bt_index 
 ```
 
-Confirm that you built the index.  You should see a bunch of files named ending in bt2, like boa_mtDNA_bt_index.3.bt2
+Confirm that you built the index.  You should see six files with names ending in bt2, like boa_mtDNA_bt_index.3.bt2
 ```
 ls -lh
 ```
@@ -62,13 +57,13 @@ Now that we've created the index, we can map reads to the boa mtDNA.  We'll map 
 
 Let's deconstruct this command line: 
 ```
-~/Desktop/GDW_Apps/bowtie2/bowtie2    # name of the command
-	-x boa_mtDNA_bt_index			   # -x: name of index you created with bowtie2-build
-   -q 									   # -q: the reads are in FASTQ format
+~/Desktop/GDW_Apps/bowtie2/bowtie2
+	-x boa_mtDNA_bt_index		# -x: name of index you created with bowtie2-build
+	-q 					   # -q: the reads are in FASTQ format
 	-1 SRR1984309_1_trimmed.fastq    # name of the paired-read FASTQ file 1
 	-2 SRR1984309_2_trimmed.fastq    # name of the paired-read FASTQ file 2
-	--no-unal 								# don't output unmapped reads to the SAM output file (will make it _much_ smaller
-	--threads 4 							# since our computers have multiple processers, run on 4 processors to go faster
+	--no-unal 						# don't output unmapped reads to the SAM output file (will make it _much_ smaller
+	--threads 4 					# since our computers have multiple processers, run on 4 processors to go faster
 	-S SRR1984309_mapped_to_boa_mtDNA.sam		# name of output file in SAM format
 ```
 
@@ -155,9 +150,9 @@ Command line options explained:
 	-m 12 -t 4   					# use 12 Gb of RAM and 4 cores 
 ```
 
-SPAdes will output a bunch of status messages to the screen as it runs the assembly.  Can you tell what the different steps do?
+SPAdes will output a bunch of status messages to the screen as it runs the assembly.  Can you tell what the different assembly steps are?
 
-After SPAdes finishes, there will be output files in the SRR1984309_spades_assembly folder.  The key ones are:
+After SPAdes finishes, there will be output files in the `SRR1984309_spades_assembly` folder.  The key ones are:
 
 - contigs.fasta:   the assembled contigs in FASTA format
 - scaffolds.fasta: scaffolds in FASTA format
