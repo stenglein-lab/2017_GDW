@@ -138,7 +138,7 @@ You should see that 90% of the reads aligned to the boa constrictor genome seque
 We will use these non-mapping reads as input to our de novo SPAdes assembly.  Run SPAdes as follows:
 
 ```
-~Desktop/GDW_Apps/SPAdes/bin/spades.py   -o SRR1984309_spades_assembly \
+~/Desktop/GDW_Apps/SPAdes/bin/spades.py   -o SRR1984309_spades_assembly \
 	--pe1-1 SRR1984309_not_boa_mapping_1.fastq \
 	--pe1-2 SRR1984309_not_boa_mapping_2.fastq \
 	-m 12 -t 4
@@ -146,7 +146,7 @@ We will use these non-mapping reads as input to our de novo SPAdes assembly.  Ru
 
 Command line options explained:
 ```
-~Desktop/GDW_Apps/SPAdes/bin/spades.py   
+~/Desktop/GDW_Apps/SPAdes/bin/spades.py   
 	-o SRR1984309_spades_assembly \   		# name of directory (folder) where SPAdes output will go
 	--pe1-1 SRR1984309_not_boa_mapping_1.fastq \	# name of read1 input file
 	--pe1-2 SRR1984309_not_boa_mapping_2.fastq \	# name of read2 input file
