@@ -39,7 +39,7 @@ Now, we'll use the bowtie2-build indexing program to create the index.  This com
 (2) the name of the index (can be whatever you want)
 
 ```
-bowtie2-build boa_mtDNA.fasta boa_mtDNA_bt_index 
+~/Desktop/GDW_Apps/bowtie2/bowtie2-build boa_mtDNA.fasta boa_mtDNA_bt_index 
 ```
 
 Confirm that you built the index.  You should see a bunch of files named ending in bt2, like boa_mtDNA_bt_index.3.bt2
