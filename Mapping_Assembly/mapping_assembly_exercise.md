@@ -155,9 +155,39 @@ Command line options explained:
 	-m 12 -t 4   					# use 12 Gb of RAM and 4 cores 
 ```
 
-SPAdes will output a bunch of status messages to the screen as it runs the assembly.  
+SPAdes will output a bunch of status messages to the screen as it runs the assembly.  Can you tell what the different steps do?
+
+After SPAdes finishes, there will be output files in the SRR1984309_spades_assembly folder.  The key ones are:
+
+-contigs.fasta:   the assembled contigs in FASTA format
+-scaffolds.fasta: scaffolds in FASTA format
+-assembly_graph.fastg:   de bruijn graphs used to create contigs.  Can be visualized using a tool like [Bandage](https://rrwick.github.io/Bandage/)
+
+Let's look at the contigs in contigs.fasta.  Navigate to that file in the Finder and open it using a text editor like TextWrangler or TextEdit.
+
+The contigs are sorted in order of length.  Recall that these are contigs made from the reads that _didn't_ map to the boa constrictor genome. Let's try to figure out what some of the contigs are.
+
+Copy the first 3 contigs (the 3 longest contigs) and open a browser, navigate to the [NCBI blastn page](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome), and paste the sequences of the first 3 contigs into the search field.  Make sure that the megablast option is selected, and run the BLAST.  
+
+- What are the sequences?  Are you confident in your conclusions?  Do they make sense?
 
 
+##### Additional time permitting exercises 
 
+1. Assembly validation:
 
+To quote [Miller et al](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2874646/), these contigs are only "putative reconstructions" of the sequences from which the reads derived.  How could we validate these sequences as being accurate?
 
+One way would be to use another sequencing technology, like PCR and Sanger sequencing.
+
+Another way to validate an assembly is to re-map reads back to it using a mapping tool like bowtie.  This might reveal errors in the assembly, or mis-assemblies.  
+
+If time permits, use what you've learned and re-map reads back to these contigs.  To do this, you'll have to create a new bowtie index (e.g. of the 1st 2 or 3 contigs) using bowtie2-build, then use bowtie2 to map reads.  Then you can visualize the aligned reads in Geneious.  Can you find any problems with the assemblies?
+
+2. Sequence annotation
+
+Another thing you could do is annotate the virus contigs.  Geneious is a great tool for doing things like finding ORFs in sequences and adding annotations, that can then be exported in GenBank format.
+
+3. Assemble the entire datasets
+
+You could also try assembling all of the reads in the datasets, not just the ones that didn't map to the boa constrictor genome.  This will take longer, but should be doable in a minute or two on your laptops.  What are the top contigs now?  What happened to the virus contigs?
