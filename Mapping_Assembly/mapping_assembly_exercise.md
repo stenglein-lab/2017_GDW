@@ -89,19 +89,18 @@ First, you need to have your reference sequence in Geneious, preferably with ann
 
 Once you have the boa constrictor mitochondrial genome in a folder in Geneious, you can drag and drop the SAM file that bowtie2 output into the same folder.  Geneious will tell you that it 'can't find the sequence it needs in the selected file'.  It is telling you it is trying to find the reference sequence to which you aligned reads.  Answer: 'Find a sequence with the same name in this Geneious folder' or 'Use one of the selected sequences' (after selecting the boa mtDNA sequence).
 
--A few Geneious tips:
-  -Enlarge the Geneious window so that it fills the screen
-  -Click View->Expand Document View to enlarge the alignment
-  -Try playing with the visualization settings in the panels on the right of the alignment
- 
+- A few Geneious tips:
+  - Enlarge the Geneious window so that it fills the screen
+  - Click View->Expand Document View to enlarge the alignment
+  - Try playing with the visualization settings in the panels on the right of the alignment
 
--Some questions to consider when viewing the alignment
-  -Are there any variants between this snake's mitochondrial genome sequence and the boa constrictor reference sequence?  Is that expected?
-  -Can you distinguish true variants from sequencing errors?
-  -What is the average coverage across the mitochondrial genome?
-  -This is essentially RNA-Seq data.  Are the mitochondrial genes expressed evenly?  How does this relate to coverage?
-  -Is it possible that reads that derive from other parts of the boa constrictor genome are mapping here?  How would you prevent that?
-  -Can you identify mapped read pairs?  
+- Some questions to consider when viewing the alignment:
+  - Is the coverage even across the mitochondrial genome?  What is the average coverage?
+  - This is essentially RNA-Seq data.  Are the mitochondrial genes expressed evenly?  How does this relate to coverage?
+  - Are there any variants between this snake's mitochondrial genome sequence and the boa constrictor reference sequence?  Is that expected?
+    - Can you distinguish true variants from sequencing errors?
+  - Is it possible that reads that derive from other parts of the boa constrictor genome are mapping here?  How would you prevent that?
+  - Can you identify mapped read pairs?  
 
 
 ### De-novo assembly of non-mapping reads
