@@ -25,7 +25,7 @@ In sequencing, a barcode is a sequence that allows samples to be multiplexed for
 
 ### Cluster
 
-In Illumina sequencing, [library](#library) molecules are hybridized to a flow cell and amplified into a cluster of a few thousand clonal copies.  The large number of copies in a cluster boosts the signal from the incorporation of fluorescent nucleotides to a detectable level.
+In Illumina sequencing, [library](#library) molecules are hybridized to a flow cell and amplified into a cluster of a few thousand clonal copies.  The large number of copies in a cluster boosts the signal from the incorporation of fluorescent nucleotides.
 
 ### Contig
 
@@ -57,7 +57,7 @@ Two common file formats for sequences or sequencing data.  [FASTA format](https:
 
 ### Index
 
-See [barcode](#barcode}
+See [barcode](#barcode)
 
 ### k-mer
 
@@ -71,17 +71,17 @@ A sequencing library is a population of molecules ready to be sequenced.  Librar
 
 Library prep (preparation) is the process by which starting nucleic acids are converted into a [sequencing library](#library).  There are a great many ways to prepare libraries, but some common steps include (not always in this order or necessarily included):
 
--Sample selection
--Isolation of nucleic acid from samples
--Enrichment (of nucleic acid subtypes you want) or subtraction (of those you don't want)
--QC of nucleic acid isolates
--Fragmentation of nucleic acid 
--Conversion of RNA into dsDNA (for RNA sequencing)
--Addition of [adapters](#adapter) to ends of library molecules, possibly with [barcodes](#barcode) for multiplexing
--Amplification of library if necessary
--Pooling of multiplexed samples
--QC / quantification of final libraries prior to loading on sequencer.
-
+- Sample selection
+- Isolation of nucleic acid from samples
+- Enrichment (of nucleic acid subtypes you want) or subtraction (of those you don't want)
+- QC of nucleic acid isolates
+- Fragmentation of nucleic acid 
+- Conversion of RNA into dsDNA (for RNA sequencing)
+- Addition of [adapters](#adapter) to ends of library molecules, possibly with [barcodes](#barcode) for multiplexing
+- Amplification of library if necessary
+- Pooling of multiplexed samples
+- QC / quantification of final libraries prior to loading on sequencer.
+ 
 ### Long read sequencing
 
 Certain sequencing technologies, such as that of [PacBio](https://en.wikipedia.org/wiki/Single_molecule_real_time_sequencing) and [Oxford Nanopore](https://en.wikipedia.org/wiki/Nanopore_sequencing), produce [reads](#read) that are much longer (many kb long) than Illumina reads (<300 nt).
