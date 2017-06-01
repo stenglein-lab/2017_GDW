@@ -15,21 +15,25 @@ Most NGS instruments require that adapters of known sequence be added to the 2 e
 
 A type of NGS in which PCR products (amplicons) are sequenced.  16S sequencing is one type of amplicon sequencing.  This is in contrast to shotgun sequencing, where libraries consist of complex populations of materials that derive randomly from the starting nucleic acids.
 
-### Assemble/Assembly
+### Assembly
 
-NGS typically produces reads that are shorter than the nucleic acids from which they derive.  Assembly is the process by which these short reads are stiched together to attempt to recreate the startng nucleic acid sequence.  
+NGS typically produces reads that are shorter than the nucleic acids from which they derive.  Assembly is the process by which these short reads are stitched together to attempt to recreate the startng nucleic acid sequence.  
 
 ### Cluster
 
 In Illumina sequencing, library molecules are hybridized to a flow cell and amplified into a luster of a few thousand clonal copies.  The large number of copies in a cluster boosts the signal from the incorporation of fluorescent nucleotides, but when the clonal copies in a cluster get out of sync, phasing issues arise, which increases error rates as sequencing progresses.
 
-Consensus sequence
-Contig
-Coverage
+### Contig
 
-### Cycle
+Contig is short for 'contiguous sequence', which are the longer sequences stitched together from short reads during [assembly](#assembly). 
 
-In Illumina sequencing, chain-terminated nucleotides are incorporated to cause the newly synthesized strand to extend one base at a time.
+### Coverage
+
+Coverage, sometimes refered to as 'sequencing depth', is the number of individual reads that support a particular nucleotide in an assembled (reconstructed) sequence.
+
+<img src="https://commons.wikimedia.org/wiki/File:Read,_read_length_and_read_depth_to_achieve_a_read_depth_of_4.jpg">
+
+_image credit: wikimedia.org_
 
 ### De novo assembly
 
