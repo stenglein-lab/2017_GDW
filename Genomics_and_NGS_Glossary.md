@@ -56,6 +56,12 @@ NGS typically produces [reads](#read) that are shorter than the nucleic acids fr
 
 In sequencing, a barcode is a sequence that allows samples to be multiplexed for increased cost efficiency and sample throughput.  Barcode sequences are typically contained within the [adapter](#adapter) sequences of a library molecule.  Barcodes allow multiple samples, each defined by a particular barcode sequence, to be multiplexed (i.e. mixed, aka pooled) and sequenced together. The reads from individual samples are sorted by barcode after sequencing.  Barcodes are also often called indexes.  
 
+Library molecules have different adapters on each of their ends, and each adapter can have a distinct barcode.  When both adapters contain barcodes, this is referred to as 'dual indexing'.
+
+<img src="./images/library_multiplexing.jpg">
+
+**Figure: Illumina library multiplexing.** 
+
 ### Cluster
 
 In Illumina sequencing, [library](#library) molecules are hybridized to a flow cell and amplified into a cluster of a few thousand clonal copies.  The large number of copies in a cluster boosts the signal from the incorporation of fluorescent nucleotides.
