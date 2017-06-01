@@ -103,6 +103,9 @@ A variety of related techniques that involve the study of genetic material that 
 
 In Illumina sequencing, library molecules can either be sequenced from one end of the molecule or from both ends.  When reads are generated from both ends of the molecule, these are referred to as 'paired' reads.  Depending on the length of the library molecule and the length of the reads, these paired reads may or may not overlap.
 
+Partially overlapping paired reads.  In the figure below, [adapters] are shown in blue and orange the starting nucleic acid-derived portion of the library molecule is grey.
+<img src="./partially_overlapping_paired_reads.jpg">
+
 ### Read
 
 A sequencing read is a short (or long) sequence output by a sequencing instrument.  Read length is a function of the type of instrument used, as are properties of the reads such as their error rate profiles.  Illumina sequencing typically produces larger numbers of shorter reads (50-300 nt) with relatively low error rates, whereas [long-read sequencers](#long-read-sequencing) (PacBio, Oxford Nanopore) typcially produce lower numbers of much longer reads (>>1 kb) with relatively high error rates.
