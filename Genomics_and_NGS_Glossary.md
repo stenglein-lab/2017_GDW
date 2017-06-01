@@ -10,27 +10,27 @@ The [16S](https://en.wikipedia.org/wiki/16S_ribosomal_RNA) ribosomal RNA gene is
 
 ### Adapter
 
-Most NGS instruments require that adapters of known sequence be added to the 2 ends of dsDNA molecules that will be sequenced on the instrument.  Adapters are added in a variety of ways to starting nucleic acid molecules during library preparation.  Adapters serve multiple purposes. For instance in Illumina sequencing, adapters allow molecules to anneal to flow cells and be amplified into a clonal [cluster](#cluster). Adapters often contain index sequences (barcodes) that allow samples to be multiplexed.  
+Most NGS instruments require that dsDNA of known sequence be added to the 2 ends of [library](#library) molecules that will be sequenced on the instrument.  Adapters can be added in a variety of ways to starting nucleic acid molecules during [library preparation](#library-prep).  Adapters serve multiple purposes. For instance in Illumina sequencing, adapters allow molecules to anneal to flow cells and be amplified into a clonal [cluster](#cluster). Adapters often contain index sequences ([barcodes](#barcode)) that allow samples to be multiplexed.  
 
 ### Amplicon sequencing
 
-A type of NGS in which PCR products (amplicons) are sequenced.  16S sequencing is one type of amplicon sequencing.  This is in contrast to shotgun sequencing, where libraries consist of complex populations of materials that derive randomly from the starting nucleic acids.
+A type of NGS in which PCR products (amplicons) are sequenced.  [16S](#16S) sequencing is one type of amplicon sequencing.  This is in contrast to shotgun sequencing, where [libraries](#library) consist of complex populations of materials that derive randomly from the starting nucleic acids.
 
 ### Assembly
 
-NGS typically produces reads that are shorter than the nucleic acids from which they derive.  Assembly is the process by which these short reads are stitched together to attempt to recreate the startng nucleic acid sequence.  
+NGS typically produces [reads](#read) that are shorter than the nucleic acids from which they derive.  Assembly is the process by which these short reads are stitched together to attempt to reconstruct the startng nucleic acid sequence.  
 
 ### Barcode
 
-In sequencing, a barcode is a sequence that is typically contained within the adapter sequences of a library molecule.  Barcodes allow multiple samples, each defined by a particular barcode sequence, to be mixed (aka pooled, aka multiplexed) and sequenced together. The reads from individual samples are sorted by barcode after sequencing.  Barcodes are also often called indexes.  
+In sequencing, a barcode is a sequence that allows samples to be multiplexed for increased cost efficiency and sample throughput.  Barcode sequences are typically contained within the [adapter](#adapter) sequences of a library molecule.  Barcodes allow multiple samples, each defined by a particular barcode sequence, to be multiplexed (i.e. mixed, aka pooled) and sequenced together. The reads from individual samples are sorted by barcode after sequencing.  Barcodes are also often called indexes.  
 
 ### Cluster
 
-In Illumina sequencing, library molecules are hybridized to a flow cell and amplified into a luster of a few thousand clonal copies.  The large number of copies in a cluster boosts the signal from the incorporation of fluorescent nucleotides, but when the clonal copies in a cluster get out of sync, phasing issues arise, which increases error rates as sequencing progresses.
+In Illumina sequencing, [library](#library) molecules are hybridized to a flow cell and amplified into a cluster of a few thousand clonal copies.  The large number of copies in a cluster boosts the signal from the incorporation of fluorescent nucleotides to a detectable level.
 
 ### Contig
 
-Contig is short for 'contiguous sequence', which are the longer sequences stitched together from short reads during [assembly](#assembly). 
+Contig is short for 'contiguous sequence', which are the longer sequences stitched together from overlapping short reads during [assembly](#assembly). 
 
 ### Coverage
 
@@ -42,11 +42,11 @@ _image credit: wikimedia.org_
 
 ### Deep sequencing
 
-A synonym for [NGS](#NGS)
+A synonym for [NGS](#NGS) that you'll hear from time to time.  Perhaps falling out of favor.
 
 ### De novo assembly
 
-De novo assembly refers to the fact that most of the time, [assembly](#assembly) involves the reconstruction of an unknown sequence.  Most assemblies are de novo assemblies.   
+De novo assembly refers to the fact that most of the time, [assembly](#assembly) involves the reconstruction of an unknown (not yet sequenced) genome sequence.  Most assemblies are de novo assemblies.   
 
 ### Exome
 
@@ -54,7 +54,7 @@ The [exome](https://en.wikipedia.org/wiki/Exome) is "the part of the genome form
 
 ### FASTA / FASTQ
 
-Two common file formats for sequences or sequencing data.  In [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format) files, quality score are associated with individual bases.
+Two common file formats for sequences or sequencing data.  [FASTA format](https://en.wikipedia.org/wiki/FASTA_format). In [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format) files, quality score are associated with individual bases.
 
 ### Index
 
@@ -78,14 +78,14 @@ Library prep (preparation) is the process by which starting nucleic acids are co
 -QC of nucleic acid isolates
 -Fragmentation of nucleic acid 
 -Conversion of RNA into dsDNA (for RNA sequencing)
--Addition of adapters to ends of library molecules, possibly with barcodes for multiplexing
+-Addition of [adapters](#adapter) to ends of library molecules, possibly with [barcodes](#barcode) for multiplexing
 -Amplification of library if necessary
 -Pooling of multiplexed samples
 -QC / quantification of final libraries prior to loading on sequencer.
 
 ### Long read sequencing
 
-Certain sequencing technologies, such as that of [PacBio](https://en.wikipedia.org/wiki/Single_molecule_real_time_sequencing) and [Oxford Nanopore](https://en.wikipedia.org/wiki/Nanopore_sequencing), produce reads that are much longer (many kb long) than Illumina reads (<300 nt).
+Certain sequencing technologies, such as that of [PacBio](https://en.wikipedia.org/wiki/Single_molecule_real_time_sequencing) and [Oxford Nanopore](https://en.wikipedia.org/wiki/Nanopore_sequencing), produce [reads](#read) that are much longer (many kb long) than Illumina reads (<300 nt).
 
 ### Mapping
 
@@ -97,7 +97,7 @@ A variety of related techniques that involve the study of genetic material that 
 
 ### NGS
 
-[Next generation sequencing](https://en.wikipedia.org/wiki/DNA_sequencing#High-throughput_methods), aka high throughput sequencing, aka 'deep' sequencing.  Any of a number of sequencing technologies that enable the simultaneous sequencing of a large number of molecules.
+[Next generation sequencing](https://en.wikipedia.org/wiki/DNA_sequencing#High-throughput_methods), aka high throughput sequencing, aka 'deep' sequencing.  Any of a number of sequencing technologies that enable the simultaneous sequencing of a large number of molecules.  Some people get worked up about what to call these technologies, but it doesn't seem worth the effort.
 
 ### Paired end
 
@@ -105,7 +105,7 @@ In Illumina sequencing, library molecules can either be sequenced from one end o
 
 ### Read
 
-A sequencing read is a short (or long) sequence output by a sequencing instrument.  Read length is a function of the type of instrument used, as are properties of the read such as its error rate.  Illumina sequencing typically produces larger numbers of shorter reads (50-300 nt) with relatively low error rates, whereas long-read sequencers (PacBio, Oxford Nanopore) typcially produce lower numbers of much longer reads (>>1 kb) with relatively high error rates.
+A sequencing read is a short (or long) sequence output by a sequencing instrument.  Read length is a function of the type of instrument used, as are properties of the reads such as their error rate profiles.  Illumina sequencing typically produces larger numbers of shorter reads (50-300 nt) with relatively low error rates, whereas [long-read sequencers](#long-read-sequencing) (PacBio, Oxford Nanopore) typcially produce lower numbers of much longer reads (>>1 kb) with relatively high error rates.
 
 ### Reference sequence 
 
@@ -129,7 +129,7 @@ A single nucleotide polymorphism (SNP) is a nucleotide in a sequence that differ
 
 ### Transcriptome
 
-The transcriptome refers to the set of transcripts (mRNAs) in a cell,  tissue, or sample.  In transcriptome sequencing (RNA-seq), library preparation includes steps that enrich for mRNAs, and the abundance of reads from particular transcripts can be used to estimate the abundance of that transcript.
+The transcriptome refers to the set of transcripts (mRNAs) in a cell or population of cells.  In transcriptome sequencing (RNA-seq), library preparation includes steps that enrich for mRNAs, and the abundance of reads from particular transcripts can be used to estimate the abundance of that transcript.
 
 ### Variant
 
@@ -137,5 +137,5 @@ A variant is a difference between a sequence and the corresponding region of a p
 
 ### WGS
 
-Whole genome sequencing (WGS) is the process by which the genome sequence of an organism is determined.  WGS typically involves sequencing, assembly, and annotation, and is not a trivial undertaking.  Sequencing of an additional individual from an already-sequenced species is typically a much easier undertaking.
+Whole genome sequencing (WGS) is the process by which the genome sequence of an organism is determined.  WGS typically involves sequencing, assembly, and annotation, and is not a trivial undertaking.  Sequencing of an additional individual's genome from an already-sequenced species is typically a much more straightforward undertaking.
 
