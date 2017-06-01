@@ -96,6 +96,9 @@ k-mers are sub-sequences of a longer sequence of length k.  The term 'word' is s
 
 A sequencing library is a population of molecules ready to be sequenced.  Libraries can be simple or complex: ranging from a population of PCR amplicons to a complex mixtures of molecules randomly sampled from the starting nucleic acids.
 
+**Overview of sequencing libraries.**  
+<img src="./Library_overview.jpg">
+
 ### Library Prep
 
 Library prep (preparation) is the process by which starting nucleic acids are converted into a [sequencing library](#library).  There are a great many ways to prepare libraries, but some common steps include (not always in this order or necessarily included):
