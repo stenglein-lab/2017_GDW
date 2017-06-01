@@ -136,7 +136,9 @@ A variety of related techniques that involve the study of genetic material that 
 In Illumina sequencing, library molecules can either be sequenced from one end of the molecule or from both ends.  When reads are generated from both ends of the molecule, these are referred to as 'paired' reads.  Depending on the length of the library molecule and the length of the reads, these paired reads may or may not overlap.
 
 <img src="./partially_overlapping_paired_reads.jpg">
-**Figure: Partially overlapping paired reads**  Depending on [read](#read) length and library molecule length, paired reads might or might not overlap.
+######Figure: Partially overlapping paired reads.
+Depending on [read](#read) length and library molecule length, paired reads might or might not overlap.
+**Figure: Partially overlapping paired reads.**  Depending on [read](#read) length and library molecule length, paired reads might or might not overlap.
 
 ### Read
 
