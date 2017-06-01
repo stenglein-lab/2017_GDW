@@ -165,6 +165,10 @@ A reference sequence is a genome sequence meant to be representative of the geno
 
 In single-end sequencing, library molecules are sequenced from only one end.  See [paired end](#paired-end).  
 
+<img src="./images/illumina_sequencing_reads.jpg">
+
+**Figure: Illumina sequencing can generate 1-4 reads per library molecule**
+
 ### Scaffold
 
 In [assembly](#assembly), [contigs](#contigs) that are known to be proximal in a starting genome sequence can be linked together into a scaffold.  Scaffolding of contigs generated from short reads typically makes use of additional data, such as [long reads](#long-read-sequencing) or [optical mapping](https://en.wikipedia.org/wiki/Optical_mapping).
