@@ -1,6 +1,6 @@
 ## A (partial) glossary of genomics and sequencing terminology
 
-For [GDW 2017](http://gdwworkshop.colostate.edu/) by [Mark Stenglein](www.stengleinlab.org)
+For [GDW 2017](http://gdwworkshop.colostate.edu/) by [Mark Stenglein](http://www.stengleinlab.org)
 
 
 ### 16S
