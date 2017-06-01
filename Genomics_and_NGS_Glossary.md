@@ -32,6 +32,7 @@ Contig is short for 'contiguous sequence', which are the longer sequences stitch
 Coverage, sometimes refered to as 'sequencing depth', is the number of individual reads that support a particular nucleotide in an assembled (reconstructed) sequence.
 
 <img src="https://commons.wikimedia.org/wiki/File:Read,_read_length_and_read_depth_to_achieve_a_read_depth_of_4.jpg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Read%2C_read_length_and_read_depth_to_achieve_a_read_depth_of_4.jpg">
 
 _image credit: wikimedia.org_
 
