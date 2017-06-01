@@ -137,7 +137,7 @@ In Illumina sequencing, library molecules can either be sequenced from one end o
 
 <img src="./partially_overlapping_paired_reads.jpg">
 
-**Figure: Partially overlapping paired reads.**  Depending on [read](#read) length and library molecule length, paired reads might or might not overlap.
+**Figure**  Depending on [read](#read) length and library molecule length, paired reads might or might not overlap.
 
 ### Read
 
