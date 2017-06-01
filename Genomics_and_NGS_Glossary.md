@@ -9,7 +9,7 @@ The [16S](https://en.wikipedia.org/wiki/16S_ribosomal_RNA) ribosomal RNA gene is
 
 ### Adapter
 
-Most NGS instruments require that dsDNA of known sequence be added to the 2 ends of [library](#library) molecules that will be sequenced on the instrument.  Adapters can be added in a variety of ways to starting nucleic acid molecules during [library preparation](#library-prep).  Adapters serve multiple purposes. For instance in Illumina sequencing, adapters allow molecules to anneal to flow cells and be amplified into a clonal [cluster](#cluster). Adapters often contain index sequences ([barcodes](#barcode)) that allow samples to be multiplexed.  
+Most NGS instruments require that dsDNA of known sequence be added to the 2 ends of [library](#library) molecules that will be sequenced on the instrument.  Adapters can be added in a variety of ways to starting nucleic acid molecules during [library preparation](#library-prep).  Adapters serve multiple purposes. For instance in Illumina sequencing, adapters allow molecules to anneal to flow cells and be amplified into a clonal [cluster](#cluster). Adapters often contain index sequences ([barcodes](#barcode)) that allow samples to be multiplexed.  In Illumina sequencing, barcode sequences are typically read using 'index reads', separate from the main [single](#single-end) or [paired-end](#paired-end) reads. 
 
 ### Amplicon sequencing
 
