@@ -1,7 +1,6 @@
-## A (partial) glossary of genomics and NGS terminology
+## A (partial) glossary of genomics and sequencing terminology
 
-[GDW 2017](http://gdwworkshop.colostate.edu/)
-By [Mark Stenglein](stengleinlab.org)
+For [GDW 2017](http://gdwworkshop.colostate.edu/) by [Mark Stenglein](www.stengleinlab.org)
 
 
 ### 16S
@@ -103,7 +102,7 @@ A variety of related techniques that involve the study of genetic material that 
 
 In Illumina sequencing, library molecules can either be sequenced from one end of the molecule or from both ends.  When reads are generated from both ends of the molecule, these are referred to as 'paired' reads.  Depending on the length of the library molecule and the length of the reads, these paired reads may or may not overlap.
 
-Partially overlapping paired reads.  In the figure below, [adapters] are shown in blue and orange the starting nucleic acid-derived portion of the library molecule is grey.
+**Partially overlapping paired reads.**  In the figure below, [adapters] are shown in blue and orange the starting nucleic acid-derived portion of the library molecule is grey.  Sequencing primers (not part of the actual read) are shown as arrows, and the paired reads are dotted lines.
 <img src="./partially_overlapping_paired_reads.jpg">
 
 ### Read
