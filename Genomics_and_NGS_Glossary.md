@@ -66,9 +66,7 @@ Coverage, sometimes refered to as 'sequencing depth', is the number of individua
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Read%2C_read_length_and_read_depth_to_achieve_a_read_depth_of_4.jpg">
 
-**Figure: read depth**
-
-_image credit: wikimedia.org_
+**Figure: read depth** _image credit: wikimedia.org_
 
 ### Deep sequencing
 
@@ -165,9 +163,7 @@ In [assembly](#assembly), [contigs](#contigs) that are known to be proximal in a
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/PET_contig_scaffold.png">
 
-**Figure: Scaffolds** are generated during assembly by using additional data to join physically linked contigs.
-
-_image credit: wikimedia.org_
+**Figure: Scaffolds** are generated during assembly by using additional data to join physically linked contigs.  _image credit: wikimedia.org_
 
 ### SNP
 
