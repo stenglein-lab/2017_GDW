@@ -131,7 +131,7 @@ A single nucleotide polymorphism (SNP) is a nucleotide in a sequence that differ
 
 ### Transcriptome
 
-The transcriptome refers to the set of transcripts (mRNAs) in a cell or population of cells.  In transcriptome sequencing (RNA-seq), library preparation includes steps that enrich for mRNAs, and the abundance of reads from particular transcripts can be used to estimate the abundance of that transcript.
+The transcriptome refers to the set of transcripts (mRNAs) in a cell or population of cells.  In transcriptome sequencing (aka RNA-seq), library preparation includes steps that enrich for mRNAs, and the abundance of reads from particular transcripts can be used to estimate the abundance of that transcript.
 
 ### Variant
 
