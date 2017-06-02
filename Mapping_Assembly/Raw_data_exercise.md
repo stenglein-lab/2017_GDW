@@ -109,7 +109,7 @@ From the website linked above:
 ```
 # Let us first uncompress the trimmed sequencing reads and convert to FASTA format
 gunzip -c ERR1938563_1.trimmed.fastq.gz | seqtk seq -A - > ERR1938563_1.trimmed.fasta
-gunzip -c ERR1938563_1.trimmed.fastq.gz | seqtk seq -A - > ERR1938563_2.trimmed.fasta
+gunzip -c ERR1938563_2.trimmed.fastq.gz | seqtk seq -A - > ERR1938563_2.trimmed.fasta
 
 # Download the UniVec database (FASTA format)
 curl -O ftp://ftp.ncbi.nlm.nih.gov/pub/UniVec/UniVec_Core
