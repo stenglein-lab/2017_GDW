@@ -179,6 +179,8 @@ dsk2ascii \
    paste - - | \
    gnuplot -p -e 'set term png; set logscale y; plot  "-" with lines lt -1' > k31.png
 ```
+Example plot for 31-mer histogram
+![k31](k31.png)
 Now
 - Repeat at kmer sizes of 15, 21, 27
 - Where may we recommend an error correction threshold?
