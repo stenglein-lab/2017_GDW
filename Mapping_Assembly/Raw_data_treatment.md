@@ -67,9 +67,16 @@ For our purposes, we will use the graphical user interface.
 Now we will use the software TRIMMOMATIC to perform a series of trimming procedures on the raw sequence data.
 We will run the command below first, and discuss what is happening while it runs.
 ```
+# Find the folder containing potential Illumina Adapters
+cat path/to/Trimmomatic-0.36/adapters/*.fa
+
+# Make a new fasta file of concatenated adapters
+cat path/to/Trimmomatic-0.36/adapters/*.fa > all-adapters.fa
+
+# Trim Sequences
 java -jar ../Trimmomatic-0.36/trimmomatic-0.36.jar \
    PE \
-   -threads 1 \
+   -threads 2 \
    -phred33 \
    ERR1938563_1.fastq.gz \
    ERR1938563_2.fastq.gz \
@@ -77,7 +84,7 @@ java -jar ../Trimmomatic-0.36/trimmomatic-0.36.jar \
    ERR1938563_1.trimmed.SE.fastq.gz \
    ERR1938563_2.trimmed.fastq.gz \
    ERR1938563_2.trimmed.SE.fastq.gz \
-   ILLUMINACLIP:path/to/adapters.fa:2:30:7 \
+   ILLUMINACLIP:all-adapters.fa:2:30:7 \
    LEADING:20 \
    TRAILING:20 \
    SLIDINGWINDOW:4:20 \
