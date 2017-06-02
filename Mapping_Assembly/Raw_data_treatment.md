@@ -135,6 +135,8 @@ blastn \
    -outfmt 6 \
    -out reverse-contaminants.tsv
 ```
+Did you find any contamination?
+
 ## Step 5:  Count kmers
 Here we will count the frequency of various k-mers (i.e., 31-mer) using the tool [DSK](https://github.com/GATB/dsk).
 The analysis of k-mers is used in a variety of applications, including estimating genome size, correcting sequencing errors, identifying repetitive elements, etc..
