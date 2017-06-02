@@ -68,10 +68,14 @@ Now we will use the software TRIMMOMATIC to perform a series of trimming procedu
 We will run the command below first, and discuss what is happening while it runs.
 ```
 # Find the folder containing potential Illumina Adapters
+ls
 cat path/to/Trimmomatic-0.36/adapters/*.fa
 
 # Make a new fasta file of concatenated adapters
 cat path/to/Trimmomatic-0.36/adapters/*.fa > all-adapters.fa
+
+# Correct several issues for proper Fasta formatting (any text editor) or
+vim all-adapters.fa
 
 # Trim Sequences
 java -jar ../Trimmomatic-0.36/trimmomatic-0.36.jar \
@@ -91,9 +95,9 @@ java -jar ../Trimmomatic-0.36/trimmomatic-0.36.jar \
    AVGQUAL:20 \
    MINLEN:100
 ```
-Notes to self:
+Notes:
 - Correct for path to trimmomatic.jar
-- Create adapter.fasta file and put correct path
+
 ## Step 4:  Screen for vector contamination using UNIVEC database
 An optional step is to screen the reads for additional contaminating sequences using NCBI's [UNIVEC database](https://www.ncbi.nlm.nih.gov/tools/vecscreen/univec/).
 From the website linked above:
