@@ -175,7 +175,7 @@ dsk2ascii \
    grep "^\ *[0-9]" | \
    tr -d " " | \
    paste - - | \
-   gnuplot -p -e 'set term png; set logscale y; plot  "-" with lines lt -1' > test.png
+   gnuplot -p -e 'set term png; set logscale y; plot  "-" with lines lt -1' > k31.png
 ```
 Now
 - Repeat at kmer sizes of 15, 21, 27
