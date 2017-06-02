@@ -95,6 +95,10 @@ java -jar ../Trimmomatic-0.36/trimmomatic-0.36.jar \
    AVGQUAL:20 \
    MINLEN:100
 ```
+Questions:
+- How many reads were trimmed?
+- How many are still paired?
+- Has the quality improved?  Repeat FastQC Analysis above with trimmed reads
 Notes:
 - Correct for path to trimmomatic.jar
 
@@ -131,4 +135,49 @@ blastn \
    -outfmt 6 \
    -out reverse-contaminants.tsv
 ```
+## Step 5:  Count kmers
+Here we will count the frequency of various k-mers (i.e., 31-mer) using the tool [DSK](https://github.com/GATB/dsk).
+The analysis of k-mers is used in a variety of applications, including estimating genome size, correcting sequencing errors, identifying repetitive elements, etc..
+```
+# Check dsk usage
+dsk -h
+
+# Count 31-mers
+dsk \
+   -file ERR1938563_1.trimmed.fastq.gz,ERR1938563_2.trimmed.fastq.gz \
+   -kmer-size 31 \
+   -nb-cores 2 \
+   -abundance-min 1 \
+   -max-memory 1000 \
+   -out k31.counts
+
+# Unfortunately, the output is compressed.
+# Parse the output
+dsk2ascii \
+   -file k31.counts.h5 \
+   -out k31.table
+
+# Make a histogram input table
+../dsk-v2.2.0-Source/build/ext/gatb-core/bin/h5dump \
+   -y \
+   -d histogram/histogram \
+   k31.counts.h5 | \
+   grep "^\ *[0-9]" | \
+   tr -d " " | \
+   perl -ne 's/,\n/\t/; print' > k31.histogram.tsv
+   # This can be plotted in R
+
+# Or to plot with gnuplot
+../dsk-v2.2.0-Source/build/ext/gatb-core/bin/h5dump \
+   -y \
+   -d histogram/histogram \
+   k31.counts.h5 | \
+   grep "^\ *[0-9]" | \
+   tr -d " " | \
+   paste - - | \
+   gnuplot -p -e 'set term png; set logscale y; plot  "-" with lines lt -1' > test.png
+```
+Now
+- Repeat at kmer sizes of 15, 21, 27
+- Where may we recommend an error correction threshold?
 
