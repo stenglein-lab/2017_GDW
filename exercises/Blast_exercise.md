@@ -28,6 +28,7 @@ The BLAST+ suite comes with the following tools.  We won't use all of them, but 
 - makeblastdb
 - rpsblast
 - tblastx
+
 We will be using the 'terminal' on the mac.  The terminal is how we interact with the computer without a user interface. Everyone here has various degrees of experience with the command line, so, especially in the beginning, I will try and explain some basics as we progress.  Please don't hesitate to ask if you have any questions regarding commands, parameters, etc.
 
 ## Part 1:  Remote BLAST
