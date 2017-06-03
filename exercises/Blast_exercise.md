@@ -88,7 +88,18 @@ What is different?  Do you think this would be easier or more difficult than the
 ## Part 2:  Building a database and local BLAST
 The remote blast above is convenient, but when no internet connection is available, or when there are thousands of sequences, this may not be optimal.  In these cases and many others, it is easiest to build your own BLAST database and perform the search on your own computer.
 
-In this section, we are going to download the transcriptome (remember what a 'transcriptome' is?) from the pathogen *Trichinella patagoniensis*.  [Krivokapich et al, 2012 doi:10.1016/j.ijpara.2012.07.009](http://www.sciencedirect.com/science/article/pii/S0020751912001932).
+In this section, we are going to download the transcriptome (remember what a 'transcriptome' is?) from the pathogen *Trichinella patagoniensis*.  [Krivokapich et al, 2012 doi:10.1016/j.ijpara.2012.07.009](http://www.sciencedirect.com/science/article/pii/S0020751912001932). This genus of nematode worms causes the disease trichinellosis, and infect and/or are transmitted between a variety of mammals, including humans. This particular species was described from South American pumas. We will download the transcriptome from NCBI's Transcriptome Shotgun Assembly ([TSA](https://www.ncbi.nlm.nih.gov/genbank/tsa/)) database.
+From the above link:
+- Search for accession GECA00000000.1
+- Click on contig link at bottom (To the right of "TSA")
+- Go to download tab
+- Clck and download fasta link
+
+Or download from the command line using the command below:
+```
+curl -O ftp://ftp.ncbi.nlm.nih.gov/sra/wgs_aux/GE/CA/GECA01/GECA01.1.fsa_nt.gz
+```
+
 
 
 
