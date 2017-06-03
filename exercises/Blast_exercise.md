@@ -36,7 +36,7 @@ This means we must have an internet connection in order to perform the search.
 
 **Note**: The time to complete a remote blast will vary depending on the sequence length, complexity, number of sequences, database, and internet speed.
 For this first example, let's download an example protein sequence:
-Wild camel (*Camelus ferus*) ferritin light chain protein [XP_014416718.1](https://www.ncbi.nlm.nih.gov/protein/XP_014416718.1)
+Wild camel (*Camelus ferus*) ferritin light chain protein [XP_014416718.1](https://www.ncbi.nlm.nih.gov/protein/XP_014416718.1).
 Select -> Send To -> File
 This should be saved in the downloads folder as "sequence.fasta"
 Now let's BLAST!!!
