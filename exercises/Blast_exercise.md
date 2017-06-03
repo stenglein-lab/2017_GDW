@@ -100,6 +100,25 @@ Or download from the command line using the command below:
 curl -O ftp://ftp.ncbi.nlm.nih.gov/sra/wgs_aux/GE/CA/GECA01/GECA01.1.fsa_nt.gz
 ```
 
+Now let's process the data and build a blastable database
+```
+# Uncompress the file.  What format is it?
+gunzip GECA01.1.fsa_nt.gz
 
+# How many sequences are there?
+grep -c "^>" GECA01.1.fsa_nt
+
+# Get help menu for building a database
+makeblastdb -help
+
+# Build the database
+makeblastdb \
+   -in GECA01.1.fsa_nt \
+   -input_type fasta \
+   -dbtype nucl \
+   -title Tpat \
+   -parse_seqids \
+   -out Tpat
+```
 
 
