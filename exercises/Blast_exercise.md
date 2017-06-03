@@ -63,7 +63,7 @@ blastp \
    -remote \
    -out camel_ferritin.blastout
 ```
-The \ at the end of the line tells the computer that the command will continue onto the next line. This notation can help make really long command look cleaner and easier to understand.
+The '\' at the end of the line tells the computer that the command will continue onto the next line. This notation can help make really long command look cleaner and easier to understand.  
 This search should take a couple minutes at most.  Open the contents of the file and explore:
 ```
 # Open the file to screen
