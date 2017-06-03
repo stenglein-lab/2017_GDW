@@ -169,7 +169,13 @@ blastdbcmd \
 # Interested in other formats or options?
 blastdbcmd -help
 ```
-   
+
+## Part 3: Extra credit
+[Wu et al. 2008 (doi:10.1016/j.parint.2008.03.005)](http://www.sciencedirect.com/science/article/pii/S1383576908000391) identified a set of candidate genes that were differentially expressed between various *Trichinella* infections.  One of these genes was the pax7 protein, accession: [KRY39300.1](https://www.ncbi.nlm.nih.gov/protein/954373245?report=fasta).
+Is this gene expressed in the *Trichinella patagoniensis* transcriptome?
+If so, are there multiple homologs?
+Hint: you will be searching a nucleotide database with a protein sequence
+
 
 
 
