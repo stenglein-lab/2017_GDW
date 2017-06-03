@@ -120,5 +120,14 @@ makeblastdb \
    -parse_seqids \
    -out Tpat
 ```
+What do the output files look like?  Can you open them?
 
+Let's select some random sequences from the transcriptome to use as a query.  We will use the [seqtk](https://github.com/lh3/seqtk) toolkit from Heng Li. This toolkit is fast and a standard for basic processing of sequence files (fasta and fastq).
+```
+# Select 5 sequences at random
+seqtk sample 5 GECA01.1.fsa_nt > sample5.fasta
+
+# Remember how to check the number of sequences?
+grep -c "^>" sample5.fasta
+```
 
