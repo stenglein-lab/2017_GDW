@@ -12,19 +12,21 @@
 
 [Bob's BLAST lecture]()
 
-[Bob's BLAST exercise](./Mapping_Assembly/Blast_exercise.md)
+[Bob's BLAST exercise](./exercises/Blast_exercise.md)
 
-[Mark's downloading exercise](download_exercise.md)
+[Mark's downloading exercise](./exercises/download_exercise.md)
 
 ### Monday 6/5/17
 
-[Bob's QC lectures]()
+[Bob's raw data lecture]()
+
+[Bob's raw data exercise](./exercises/Raw_data_exercise.md)
 
 [Bob's mapping lecture]()
 
 [Mark's de novo assembly lecture](./lectures/Stenglein_de_novo_assembly_lecture.pdf)
 
-[Mapping and de novo assembly exercise](./Mapping_Assembly/mapping_assembly_exercise.md)
+[Mapping and de novo assembly exercise](./exercises/mapping_assembly_exercise.md)
 
 [Mark's metagenomics lecture](./lectures/Stenglein_metagenomics_lecture.pdf)
 
