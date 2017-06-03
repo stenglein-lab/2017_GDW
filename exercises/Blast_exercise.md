@@ -37,8 +37,9 @@ This means we must have an internet connection in order to perform the search.
 **Note**: The time to complete a remote blast will vary depending on the sequence length, complexity, number of sequences, database, and internet speed.
 For this first example, let's download an example protein sequence:
 Wild camel (*Camelus ferus*) ferritin light chain protein [XP_014416718.1](https://www.ncbi.nlm.nih.gov/protein/XP_014416718.1).
-Select -> Send To -> File
-This should be saved in the downloads folder as "sequence.fasta"
+
+Select -> Send To -> File  
+This should be saved in the downloads folder as "sequence.fasta"  
 Now let's BLAST!!!
 ```
 # Make a new folder move into it
@@ -83,6 +84,11 @@ blastp \
 ```
 Open the contents of the new output file.
 What is different?  Do you think this would be easier or more difficult than the previous output to calculate various statistics, make plots, etc?
+
+## Part 2:  Building a database and local BLAST
+The remote blast above is convenient, but when no internet connection is available, or when there are thousands of sequences, this may not be optimal.  In these cases and many others, it is easiest to build your own BLAST database and perform the search on your own computer.
+
+In this section, we are going to download the transcriptome (remember what a 'transcriptome' is?) from the pathogen *Trichinella patagoniensis*.  [Krivokapich et al, 2012 doi:10.1016/j.ijpara.2012.07.009](http://www.sciencedirect.com/science/article/pii/S0020751912001932).
 
 
 
