@@ -130,4 +130,45 @@ seqtk sample 5 GECA01.1.fsa_nt > sample5.fasta
 # Remember how to check the number of sequences?
 grep -c "^>" sample5.fasta
 ```
+Next, we are going to blast these sequences against the transcriptome database we made. What do you expect to find?
+```
+blastn \
+   -query sample5.fasta \
+   -db Tpat \
+   -out sample5.blastout \
+   -num_alignments 10 \
+   -outfmt 6 \
+   -num_threads 2
+```
+How many hits are there in total?
+Let's repeat but filter for only the extremely small evalues.
+Do you expect more matches or fewer matches?
+```
+blastn \
+   -query sample5.fasta \
+   -db Tpat \
+   -out sample5.blastout2 \
+   -num_alignments 10 \
+   -outfmt 6 \
+   -num_threads 2 \
+   -evalue 1e-50
+```
+For the last part, we are going to retrieve the sequences for our matches from the above BLAST search.
+To do this, we need to make a list of the accession numbers of our matches (This only works if we built the database using the 'parse_seqids' parameter), and then retrieve the matching sequences.
+```
+# Grab the second column from the blast results
+cut -f2 sample5.blastout2 > matches.list
+
+# Retrieve the sequences for these matches
+blastdbcmd \
+   -db ./Tpat \
+   -entry_batch matches.list \
+   -out matches.fasta
+
+# Interested in other formats or options?
+blastdbcmd -help
+```
+   
+
+
 
