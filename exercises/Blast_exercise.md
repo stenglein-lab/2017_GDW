@@ -36,7 +36,7 @@ This means we must have an internet connection in order to perform the search.
 
 **Note**: The time to complete a remote blast will vary depending on the sequence length, complexity, number of sequences, database, and internet speed.
 For this first example, let's download an example protein sequence:
-Wild camel (Camelus ferus) ferritin light chain protein [XP_014416718.1](https://www.ncbi.nlm.nih.gov/protein/XP_014416718.1)
+Wild camel (*Camelus ferus*) ferritin light chain protein [XP_014416718.1](https://www.ncbi.nlm.nih.gov/protein/XP_014416718.1)
 Select -> Send To -> File
 This should be saved in the downloads folder as "sequence.fasta"
 Now let's BLAST!!!
@@ -79,8 +79,10 @@ blastp \
    -remote \
    -num_alignments 10 \
    -outfmt 6 \
-   -out test2
+   -out camel_ferritin.blastout.tsv
 ```
+Open the contents of the new output file.
+What is different?  Do you think this would be easier or more difficult than the previous output to calculate various statistics, make plots, etc?
 
 
 
