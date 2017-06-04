@@ -25,43 +25,41 @@ cd DOLPH_VIRUS
 
 # Check your current location in the file system (or "Path")
 pwd
-echo "$PWD"
+
+# You should be in the /Users/intructor/DOLPH_VIRUS folder
 ```
 Now, lets get our raw sequencing data!  GenBank's Sequence Read Archive (SRA) is the database where a majority of raw sequencing data for projects is stored.  These data are stored as a series of "Experiments" and "Runs", each with an accession number.  The acession number we want is ERR1938563. Sequencing data are stored in a highly compressed format ending in .sra.  We need to download this data and convert to the conventional FASTQ format.
 ```
 # The sratoolkit from NCBI has a program "fastq-dump" that can perform these tasks and more
-fastq-dump \
+~/Desktop/GDW_Apps/sratoolkit/bin/fastq-dump \
    --split-files \
    --gzip \
    --origfmt \
    --readids \
    ERR1938563
 ```
-The "\\" at the end of the line tells the computer that the command will continue onto the next line.  This notation can help make really long command look cleaner and easier to understand.
+The "\\" at the end of the line tells the computer that the command will continue onto the next line.  This notation can help make really long commands look cleaner and easier to understand.
 Here is a description of the parameters in the above command:
 - --split-files : split the sequences into two files, one with forward reads (mates), the second with reverse mates.
 - --gzip : compress the output FASTQ files using gzip.
 - --origfmt : Keep the original sequence name in any way.
 - --readids : Appends a read id (1 for forward, 2 for reverse) to the end of the sequence name.
+The primary difference between this fastq file and the one we downloaded yesterday afternoon is that this fastq file is compresed. This saves a lot of disk space when working with large files.  And since we are not going to open and read these files by eye, we can leave them compressed.  Many bioinformatic tools can work with the compressed files.  
 
 If you forget how to use the "fastq-dump" command, you can check its usage with:
 ```
-fastq-dump -h
+~/Desktop/GDW_Apps/sratoolkit/bin/fastq-dump -h
 ```
 The result should be two files:
 - ERR1938563_1.fastq.gz
 - ERR1938563_2.fastq.gz
 ```
 # Check the files that are in the present folder
-ls
+ls - lh
 ```
 ## Step 2:  Assess sequence quality using FASTQC
 FASTQC is a useful tool for visualizing the distribution of basic quality metrics such as length, quality, and potential contamination.
-The program has an easy-to-use graphical interface, or can be run from the command line. For example:
-```
-fastqc ERR1938563_1.fastq.gz
-```
-For our purposes, we will use the graphical user interface.
+The program has an easy-to-use graphical interface.  We will open the raw sequence files the same way as yesterday using FASTQC
 
 ## Step 3:  Trim low quality bases and sequences using TRIMMOMATIC
 Now we will use the software TRIMMOMATIC to perform a series of trimming procedures on the raw sequence data.
