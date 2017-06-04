@@ -2,6 +2,8 @@
 
 <img src="http://gdwworkshop.colostate.edu/media/sites/131/2016/11/GDW.png">
 
+[Course agenda](./GDW2017_Agenda.pdf)
+
 ### This page contains links to the lectures and exercises by Mark Stenglein and Bob Fitak for Sunday June 4 and Monday June 5.  
 
 ### Sunday 6/4/17
