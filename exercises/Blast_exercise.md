@@ -30,6 +30,42 @@ The BLAST+ suite comes with the following tools.  We won't use all of them, but 
 - tblastx
 
 We will be using the 'terminal' on the mac.  The terminal is how we interact with the computer without a user interface. Everyone here has various degrees of experience with the command line, so, especially in the beginning, I will try and explain some basics as we progress.  Please don't hesitate to ask if you have any questions regarding commands, parameters, etc.
+Here are some basic commands we will use for reference:
+```
+# How to get the manual or help menu for a command/program ("grep" example)
+man grep
+grep -h
+
+# change into a folder
+cd Folder
+
+# List the contents of a folder
+ls
+ls -lh
+ls -lh Folder
+
+# Open a file to the screen
+cat file
+
+# Open large files page by page, without wrapping lines
+less -S file
+   # type "q" to quit
+   
+# Write result of command to a new file
+cat file > newfile
+
+# Look at the first 10 lines of a file
+head -10 file
+
+# Last 10 lines
+tail -10 file
+
+# Search for lines matching "abc" in a file
+grep "abc" file
+
+# Select a column from a delimited ("tab" by default)
+cut -f3 file
+```
 
 ## Part 1:  Remote BLAST
 When we blast "remotely", we are using our command line to submit a blast search to the NCBI server.
