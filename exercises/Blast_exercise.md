@@ -30,7 +30,7 @@ The BLAST+ suite comes with the following tools.  We won't use all of them, but 
 - tblastx
 
 We will be using the 'terminal' on the mac.  The terminal is how we interact with the computer without a user interface. Everyone here has various degrees of experience with the command line, so, especially in the beginning, I will try and explain some basics as we progress.  Please don't hesitate to ask if you have any questions regarding commands, parameters, etc.
-Here are some basic commands we will use for reference:
+Here are some basic commands we will use for reference.  We will learn more along the way:
 ```
 # How to get the manual or help menu for a command/program ("grep" example)
 man grep
@@ -98,15 +98,24 @@ blastp \
    -db refseq_protein \
    -remote \
    -out camel_ferritin.blastout
+
+# Repeat the above search, but limit it to a specific species
+blastp \
+   -query camel_ferritin.faa \
+   -db refseq_protein \
+   -remote \
+   -out alpaca_ferritins.blastout \
+   -entrez_query "Alpaca[ORGN]"
+
 ```
 The \ at the end of the line tells the computer that the command will continue onto the next line. This notation can help make really long commands look cleaner and easier to understand.  
-This search should take a couple minutes at most.  Open the contents of the file and explore:
+This search should take a couple minutes at most.  Feel free to try and modify the above command to search your favorite taxonomic group. Open the contents of the files and explore:
 ```
 # Open the file to screen
-cat camel_ferritin.blastout
+cat alpaca_ferritins.blastout
 
 # More convenient way of opening large files:
-less -S camel_ferritin.blastout
+less -S alpaca_ferritins.blastout
 ```
 The results look good. However, this output format can be difficult to parse if we have thousands and thousands of sequences.
 Let's repeat the search again, but this time with some changes.
