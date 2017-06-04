@@ -214,7 +214,7 @@ We want these files in Geneious too.  Drag them into Geneious:
 
 **1. Coverage and multiplexing calculations:**
 
-You are interested in using NGS to study a collection of related bacterial isolates.  These bacteria have estimated genome sizes of 5 Mbp (5x10^6 bp).  You're going to try sequencing these genomes in a single Illumina MiSeq run with paired-end 250 base sequencing (i.e., each of the paired reads will be 250 bp long).  MiSeq runs generate ~20 million read pairs per paired-end run.  
+You are interested in using NGS to study a collection of related bacterial isolates.  These bacteria have estimated genome sizes of 5 Mbp (5x10<sup>6</sup> bp).  You're going to try sequencing these genomes in a single Illumina MiSeq run with paired-end 250 base sequencing (i.e., each of the paired reads will be 250 bp long).  MiSeq runs generate ~20 million read pairs per paired-end run.  
 
 Questions:
 
