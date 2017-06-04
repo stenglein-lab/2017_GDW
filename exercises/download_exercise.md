@@ -210,7 +210,7 @@ We want these files in Geneious too.  Drag them into Geneious:
  - Drag and drop these files into Geneious
 
 
-#### Additional, time-permitting exercises 
+### Additional, time-permitting exercises 
 
 **1. Coverage and multiplexing calculations:**
 
