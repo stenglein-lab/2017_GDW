@@ -210,8 +210,20 @@ We want these files in Geneious too.  Drag them into Geneious:
  - Drag and drop these files into Geneious
 
 
+#### Additional, time-permitting exercises 
 
-### Time-permitting: Download another genome a different way
+**1. Coverage and multiplexing calculations:**
+
+You are interested in using NGS to study a collection of related bacterial isolates.  These bacteria have estimated genome sizes of 5 Mbp (5x10^6 bp).  You're going to try sequencing these genomes in a single Illumina MiSeq run with paired-end 250 base sequencing (i.e., each of the paired reads will be 250 bp long).  MiSeq runs generate ~20 million read pairs per paired-end run.  
+
+Questions:
+
+  1. You are targeting 100x coverage for each genome.  How many genomes should you multiplex in your MiSeq run?
+
+  2. Imagine instead that you'll be doing single-end 150 base sequencing instead of paired-end 250 base sequencing.  How many isolates could you multiplex on a single MiSeq run now?
+
+
+**2. Download another genome a different way:**
 
 There isn't a boa constrictor genome in NCBI :cry:.  Let's download a bacterial genome instead: that of [_Chlamydia psittaci_](https://en.wikipedia.org/wiki/Chlamydophila_psittaci).  This will allow us to practice finding and downloading and processing a genome using slightly different approaches.
 
@@ -266,6 +278,10 @@ You can see that the file consists of a header line and the genome sequence, wit
 You will note at the top of the overview page that you can also download annotation for this genome, either as an annotated version of the genome (in Genbank format), or as a file containing the annotations (in [GFF](https://en.wikipedia.org/wiki/General_feature_format), or tabular formats)
 
 - Download the annotated genome in Genbank format, and drag and drop it into Geneious.  
+
+
+
+
 
 
 <br>
