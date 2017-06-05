@@ -20,7 +20,7 @@
 
 ### Monday 6/5/17
 
-[Bob's raw data lecture](./exercises/Fitak_GWD2017_NGS-QC.pdf)
+[Bob's raw data lecture](./lectures/Fitak_GWD2017_NGS-QC.pdf)
 
 [Bob's raw data exercise](./exercises/Raw_data_exercise.md)
 
