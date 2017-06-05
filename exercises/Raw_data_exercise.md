@@ -76,7 +76,7 @@ java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar \
    ERR1938563_1.trimmed.SE.fastq.gz \
    ERR1938563_2.trimmed.fastq.gz \
    ERR1938563_2.trimmed.SE.fastq.gz \
-   ILLUMINACLIP:/Users/instructor/Desktop/GDW_Apps/Trimmomatic-0.36/adapters/NexteraPE-PE.f:2:30:7 \
+   ILLUMINACLIP:/Users/instructor/Desktop/GDW_Apps/Trimmomatic-0.36/adapters/NexteraPE-PE.fa:2:30:7 \
    LEADING:20 \
    TRAILING:20 \
    SLIDINGWINDOW:4:20 \
