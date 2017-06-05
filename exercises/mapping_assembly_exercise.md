@@ -58,20 +58,20 @@ Now that we've created the index, we can map reads to the boa mtDNA.  We'll map 
 Let's deconstruct this command line (note: the comments will screw up this command: don't copy and paste from this box): 
 ```
  ~/Desktop/GDW_Apps/bowtie2/bowtie2
-	-x boa_mtDNA_bt_index			# -x: name of index you created with bowtie2-build
-	-q 					# -q: the reads are in FASTQ format
-	-1 SRR1984309_1_trimmed.fastq		# name of the paired-read FASTQ file 1
-	-2 SRR1984309_2_trimmed.fastq		# name of the paired-read FASTQ file 2
-	--no-unal				# don't output unmapped reads to the SAM output file (will make it _much_ smaller
-	--threads 4				# since our computers have multiple processers, run on 4 processors to go faster
-	-S SRR1984309_mapped_to_boa_mtDNA.sam	# name of output file in SAM format
+   -x boa_mtDNA_bt_index         # -x: name of index you created with bowtie2-build
+   -q                # -q: the reads are in FASTQ format
+   -1 SRR1984309_1_trimmed.fastq      # name of the paired-read FASTQ file 1
+   -2 SRR1984309_2_trimmed.fastq      # name of the paired-read FASTQ file 2
+   --no-unal            # don't output unmapped reads to the SAM output file (will make it _much_ smaller
+   --threads 4            # since our computers have multiple processers, run on 4 processors to go faster
+   -S SRR1984309_mapped_to_boa_mtDNA.sam   # name of output file in SAM format
 ```
 
 The output file SRR1984309_mapped_to_boa_mtDNA.sam is in [SAM format](https://en.wikipedia.org/wiki/SAM_(file_format)).  This is a plain text format, so you can look at the first 20 lines by running this command:
 
 
 ```
-head -20 SRR1984309_mapped_to_boa_mtDNA.sam		
+head -20 SRR1984309_mapped_to_boa_mtDNA.sam      
 ```
 
 You can see that there are several header lines beginning with `@`, and then one line for each mapped read.  See [here](http://genome.sph.umich.edu/wiki/SAM) or [here](https://samtools.github.io/hts-specs/SAMv1.pdf) for more information about interpreting SAM files.
@@ -135,18 +135,18 @@ We will use these non-mapping reads as input to our de novo SPAdes assembly.  Ru
 
 ```
 ~/Desktop/GDW_Apps/SPAdes/bin/spades.py   -o SRR1984309_spades_assembly \
-	--pe1-1 SRR1984309_not_boa_mapped.1.fastq \
-	--pe1-2 SRR1984309_not_boa_mapped.2.fastq \
-	-m 12 -t 4
+   --pe1-1 SRR1984309_not_boa_mapped.1.fastq \
+   --pe1-2 SRR1984309_not_boa_mapped.2.fastq \
+   -m 12 -t 4
 ```
 
 Command line options explained:
 ```
 ~/Desktop/GDW_Apps/SPAdes/bin/spades.py   
-	-o SRR1984309_spades_assembly \   		# name of directory (folder) where SPAdes output will go
-	--pe1-1 SRR1984309_not_boa_mapped.1.fastq \	# name of read1 input file
-	--pe1-2 SRR1984309_not_boa_mapped.2.fastq \	# name of read2 input file
-	-m 12 -t 4   					# use 12 Gb of RAM and 4 cores 
+   -o SRR1984309_spades_assembly \         # name of directory (folder) where SPAdes output will go
+   --pe1-1 SRR1984309_not_boa_mapped.1.fastq \   # name of read1 input file
+   --pe1-2 SRR1984309_not_boa_mapped.2.fastq \   # name of read2 input file
+   -m 12 -t 4                    # use 12 Gb of RAM and 4 cores 
 ```
 
 SPAdes will output a bunch of status messages to the screen as it runs the assembly.  Can you tell what the different assembly steps are?
