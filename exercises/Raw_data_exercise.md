@@ -191,7 +191,7 @@ Unfortunately, we don't have time to go into a detailed tutorial on how to plot 
    grep "^\ *[0-9]" | \
    tr -d " " | \
    paste - - | \
-   gnuplot -p -e 'set term png; set logscale y; plot  "-" with lines lt -1' > k31.png
+   /Users/instructor/Desktop/GDW_Apps/gnuplot-5.0.6/src/gnuplot -p -e 'set term png; set logscale y; plot  "-" with lines lt -1' > k31.png
 ```
 You can then forget about the command line for a minute, and open the picture (k31.png) by opening the folder and double clicking on it.  It should look like the one below.
 
