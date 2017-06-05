@@ -106,7 +106,7 @@ makeblastdb \
    -out UNIVEC \
    -dbtype nucl
 ```
-Ok.  So we built a blast database composed of potential contaminating sequences.  Now we need to BLAST our trimmed sequence reads against the database to see if we have matches.  Matches suggest contamination that needs to be removed.  BLAST, however, requires a FASTA input file, and our reads are in fastq format.  So we need to uncompress and convert them into fasta.
+Ok.  So we built a blast database composed of potential contaminating sequences.  Now we need to BLAST our trimmed sequence reads against the database to see if we have matches.  Matches suggest contamination that needs to be removed.  BLAST, however, requires a FASTA input file, and our reads are in FASTQ format.  So we need to uncompress and convert them into FASTA.
 
 ```
 # Let us first uncompress the trimmed sequencing reads
@@ -117,7 +117,7 @@ gunzip ERR1938563_2.trimmed.fastq.gz
 ~/Desktop/GDW_Apps/seqtk-master/seqtk seq -A ERR1938563_1.trimmed.fastq > ERR1938563_1.trimmed.fasta
 ~/Desktop/GDW_Apps/seqtk-master/seqtk seq -A ERR1938563_2.trimmed.fastq > ERR1938563_2.trimmed.fasta
 ```
-I don't think we touched on this before, but many programs, like seqtk, normally print the output to the terminal (screen).  However, by adding the ">" character, we can direct this output to a new file.  So in the above commands, we generated entirely new fasta files called ERR1938563_1.trimmed.fasta and ERR1938563_1.trimmed.fasta.
+The 'seqtk seq' command above takes in a FASTQ file, and the parameter "-A" tells the program to convert it to a FASTA file format. I don't think we touched on this before, but many programs, like seqtk, normally print the output to the terminal (screen).  However, by adding the ">" character, we can direct this output to a new file.  So in the above commands, we generated entirely new FASTA files called ERR1938563_1.trimmed.fasta and ERR1938563_1.trimmed.fasta.
 
 Now let's BLAST our reads to look for contamination
 ```
@@ -171,18 +171,20 @@ You can now read the new output file using a command like "head" to show the fir
 - Column 1 is the actual 31 bp sequence.
 - Column 2 is the count of the number of occurrences.
 
-# Make a histogram input table
-../dsk-v2.2.0-Source/build/ext/gatb-core/bin/h5dump \
-   -y \
-   -d histogram/histogram \
-   k31.counts.h5 | \
-   grep "^\ *[0-9]" | \
-   tr -d " " | \
-   perl -ne 's/,\n/\t/; print' > k31.histogram.tsv
-   # This can be plotted in R
+It is common to make plots, such as a histogram, to see the distribution of k-mer counts.  Many statistic tools like R, EXCEL, MATLAB, JMP, or SAS can be used to draw these plots.  However, our small k-mer counts file still has a few million lines, which may slow down some programs like EXCEL.
+How big is this file and how many lines (31-mers) are there?
+```
+# View file information
+ls -lh k31.table
 
-# Or to plot with gnuplot
-../dsk-v2.2.0-Source/build/ext/gatb-core/bin/h5dump \
+# Count the number of lines
+wc -l k31.table
+```
+
+Unfortunately, we don't have time to go into a detailed tutorial on how to plot data, but the command below is optional to run if you want to create a pretty picture.
+```
+# Plot with gnuplot
+~/Desktop/GDW_Apps/dsk-v2.2.0-bin-Darwin/bin/h5dump \
    -y \
    -d histogram/histogram \
    k31.counts.h5 | \
@@ -190,13 +192,15 @@ You can now read the new output file using a command like "head" to show the fir
    tr -d " " | \
    paste - - | \
    gnuplot -p -e 'set term png; set logscale y; plot  "-" with lines lt -1' > k31.png
-   
-   
+```
+You can then forget about the command line for a minute, and open the picture (k31.png) by opening the folder and double clicking on it.  It should look like the one below.
+
 Example plot for 31-mer histogram
 X-axis: Number of occurences
 Y-axis: Count
 ![k31](k31.png)
-Now
+Extra credit for those interested:
 - Repeat at kmer sizes of 15, 21, 27
 - Where may we recommend an error correction threshold?
+- After trimming, we have leftover unpaired read files.  Does the k-mer distribution look the same in these files?
 
