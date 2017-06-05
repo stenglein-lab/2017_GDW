@@ -24,7 +24,7 @@
 
 [Bob's raw data exercise](./exercises/Raw_data_exercise.md)
 
-[Bob's mapping lecture]()
+[Bob's mapping lecture](./lectures/Fitak_GWD2017_Mapping.pdf)
 
 [Mark's de novo assembly lecture](./lectures/Stenglein_de_novo_assembly_lecture.pdf)
 
