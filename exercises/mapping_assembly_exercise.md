@@ -113,8 +113,8 @@ The instructors have already downloaded an assembly of the boa constrictor genom
 
 First, let's transfer the bowtie index from the HDD to your working folder:
 ```
-# UPDATED! :)
-cp /Volumes/GDWDrive/Files/MarkS/Mapping_Assembly/boa_constrictor_bt_index* ~/gdw_working
+# UPDATED AGAIN! :)
+cp /Volumes/GDWDrive/Files/MarkS/Mapping_Assembly/boa_constrictor_bt_index* .
 ```
 
 Now, we'll run bowtie2 to map reads to the entire boa genome.  This time we'll run bowtie2 a little differently:
