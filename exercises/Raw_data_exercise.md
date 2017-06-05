@@ -44,7 +44,7 @@ Here is a description of the parameters in the above command:
 - --gzip : compress the output FASTQ files using gzip.
 - --origfmt : Keep the original sequence name in any way.
 - --readids : Appends a read id (1 for forward, 2 for reverse) to the end of the sequence name.
-The primary difference between this fastq file and the one we downloaded yesterday afternoon is that this fastq file is compresed. This saves a lot of disk space when working with large files.  And since we are not going to open and read these files by eye, we can leave them compressed.  Many bioinformatic tools can work with the compressed files.  
+The primary difference between this fastq file and the one we downloaded yesterday afternoon is that this fastq file is compressed. This saves a lot of disk space when working with large files.  And since we are not going to open and read these files by eye, we can leave them compressed.  Many bioinformatic tools can work with the compressed files.  
 
 If you forget how to use the "fastq-dump" command, you can check its usage with:
 ```
@@ -117,6 +117,8 @@ gunzip ERR1938563_2.trimmed.fastq.gz
 ~/Desktop/GDW_Apps/seqtk-master/seqtk seq -A ERR1938563_1.trimmed.fastq > ERR1938563_1.trimmed.fasta
 ~/Desktop/GDW_Apps/seqtk-master/seqtk seq -A ERR1938563_2.trimmed.fastq > ERR1938563_2.trimmed.fasta
 ```
+I don't think we touched on this before, but many programs, like seqtk, normally print the output to the terminal (screen).  However, by adding the ">" character, we can direct this output to a new file.  So in the above commands, we generated entirely new fasta files called ERR1938563_1.trimmed.fasta and ERR1938563_1.trimmed.fasta.
+
 Now let's BLAST our reads to look for contamination
 ```
 # Blast the forward and reverse sequencing reads
@@ -139,7 +141,7 @@ Did you find any contamination?
 Here we will count the frequency of various k-mers (i.e., 31-mer) using the tool [DSK](https://github.com/GATB/dsk).
 The analysis of k-mers is used in a variety of applications, including estimating genome size, correcting sequencing errors, identifying repetitive elements, etc..
 ```
-# Check dsk usage
+# Optional: Check dsk usage (manual)
 ~/Desktop/GDW_Apps/dsk-v2.2.0-bin-Darwin/bin/dsk -h
 
 # Count 31-mers
@@ -150,14 +152,24 @@ The analysis of k-mers is used in a variety of applications, including estimatin
    -abundance-min 1 \
    -max-memory 1000 \
    -out k31.counts
+```
+The above command counted 31-mers in the combined forward and reverse reads.  Here is a description of the command parameters used:
+- -kmer-size 31 : count kmers of length 31 bp (31-mer)
+- -nb-cores : number of computer threads to use.  This mac computer can use up to 4.  Using more cores can speed up the processing of large files.
+- -abundance-min 1 : only count k-mers that occur at least this many times.  Sometimes it is useful to ignore rare k-mers, but in our case we will count them all.
+- -max-memory 1000 : This tells the computer how much memory to allocate to this analysis.  K-mer counting is actually quite intensive, so this can help avoid using too much memory and failing with large datasets.
+- -out k31.counts : the name of the output file.  The file is a specialized compressed format.  For example, there are 4^31 (4.6x10^18) possible 31-mers, which could produce a very, very, very large file in a large sequence file. Therefore compression is often necessary.
 
-# Unfortunately, the output is compressed.
-# Parse the output
+Now we will uncompress the output into a nice tab-separated form.
+```
+# Uncompress the output
 ~/Desktop/GDW_Apps/dsk-v2.2.0-bin-Darwin/bin/dsk2ascii \
    -file k31.counts.h5 \
    -out k31.table
 ```
-
+You can now read the new output file using a command like "head" to show the first several lines of the file.  Each line has two columns:
+- Column 1 is the actual 31 bp sequence.
+- Column 2 is the count of the number of occurrences.
 
 # Make a histogram input table
 ../dsk-v2.2.0-Source/build/ext/gatb-core/bin/h5dump \
