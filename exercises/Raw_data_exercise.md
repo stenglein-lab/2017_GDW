@@ -55,7 +55,7 @@ The result should be two files:
 - ERR1938563_2.fastq.gz
 ```
 # Check the files that are in the present folder
-ls - lh
+ls -lh
 ```
 ## Step 2:  Assess sequence quality using FASTQC
 FASTQC is a useful tool for visualizing the distribution of basic quality metrics such as length, quality, and potential contamination.
@@ -76,7 +76,7 @@ java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar \
    ERR1938563_1.trimmed.SE.fastq.gz \
    ERR1938563_2.trimmed.fastq.gz \
    ERR1938563_2.trimmed.SE.fastq.gz \
-   ILLUMINACLIP:/Users/instructor/Desktop/GDW_Apps/Trimmomatic-0.36/adapters/NexteraPE-PE.f:2:30:7 \
+   ILLUMINACLIP:/Users/instructor/Desktop/GDW_Apps/Trimmomatic-0.36/adapters/NexteraPE-PE.fa:2:30:7 \
    LEADING:20 \
    TRAILING:20 \
    SLIDINGWINDOW:4:20 \
@@ -191,7 +191,7 @@ Unfortunately, we don't have time to go into a detailed tutorial on how to plot 
    grep "^\ *[0-9]" | \
    tr -d " " | \
    paste - - | \
-   gnuplot -p -e 'set term png; set logscale y; plot  "-" with lines lt -1' > k31.png
+   /Users/instructor/Desktop/GDW_Apps/gnuplot-5.0.6/src/gnuplot -p -e 'set term png; set logscale y; plot  "-" with lines lt -1' > k31.png
 ```
 You can then forget about the command line for a minute, and open the picture (k31.png) by opening the folder and double clicking on it.  It should look like the one below.
 
