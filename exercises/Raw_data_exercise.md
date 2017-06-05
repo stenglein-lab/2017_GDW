@@ -198,9 +198,12 @@ You can then forget about the command line for a minute, and open the picture (k
 Example plot for 31-mer histogram
 X-axis: Number of occurences
 Y-axis: Count
-![k31](k31.png)
+![k31](k31.png)  
+A few questions to consider from this plot:
+- Where would you make a cutoff for "true" 31-mers versus "error" 31-mers?
+- Can you estimate the genome size?
 Extra credit for those interested:
 - Repeat at kmer sizes of 15, 21, 27
 - Where may we recommend an error correction threshold?
-- After trimming, we have leftover unpaired read files.  Does the k-mer distribution look the same in these files?
+- After trimming, we had leftover unpaired read files.  Does the k-mer distribution look the same in these files?
 
