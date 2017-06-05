@@ -65,18 +65,8 @@ The program has an easy-to-use graphical interface.  We will open the raw sequen
 Now we will use the software TRIMMOMATIC to perform a series of trimming procedures on the raw sequence data.
 We will run the command below first, and discuss what is happening while it runs.
 ```
-# Find the folder containing potential Illumina Adapters
-ls
-cat path/to/Trimmomatic-0.36/adapters/*.fa
-
-# Make a new fasta file of concatenated adapters
-cat path/to/Trimmomatic-0.36/adapters/*.fa > all-adapters.fa
-
-# Correct several issues for proper Fasta formatting (any text editor) or
-vim all-adapters.fa
-
 # Trim Sequences
-java -jar ../Trimmomatic-0.36/trimmomatic-0.36.jar \
+java -jar ~/Desktop/GDW_Apps/Trimmomatic-0.36/trimmomatic-0.36.jar \
    PE \
    -threads 2 \
    -phred33 \
@@ -86,7 +76,7 @@ java -jar ../Trimmomatic-0.36/trimmomatic-0.36.jar \
    ERR1938563_1.trimmed.SE.fastq.gz \
    ERR1938563_2.trimmed.fastq.gz \
    ERR1938563_2.trimmed.SE.fastq.gz \
-   ILLUMINACLIP:all-adapters.fa:2:30:7 \
+   ILLUMINACLIP:/Users/instructor/Desktop/GDW_Apps/Trimmomatic-0.36/adapters/NexteraPE-PE.f:2:30:7 \
    LEADING:20 \
    TRAILING:20 \
    SLIDINGWINDOW:4:20 \
@@ -97,20 +87,17 @@ Questions:
 - How many reads were trimmed?
 - How many are still paired?
 - Has the quality improved?  Repeat FastQC Analysis above with trimmed reads
-Notes:
-- Correct for path to trimmomatic.jar
 
 ## Step 4:  Screen for vector contamination using UNIVEC database
 An optional step is to screen the reads for additional contaminating sequences using NCBI's [UNIVEC database](https://www.ncbi.nlm.nih.gov/tools/vecscreen/univec/).
 From the website linked above:
 "In addition to vector sequences, UniVec also contains sequences for those adapters, linkers, and primers commonly used in the process of cloning cDNA or genomic DNA. This enables contamination with these oligonucleotide sequences to be found during the vector screen."
 ```
-# Let us first uncompress the trimmed sequencing reads and convert to FASTA format
-gunzip -c ERR1938563_1.trimmed.fastq.gz | seqtk seq -A - > ERR1938563_1.trimmed.fasta
-gunzip -c ERR1938563_2.trimmed.fastq.gz | seqtk seq -A - > ERR1938563_2.trimmed.fasta
-
 # Download the UniVec database (FASTA format)
 curl -O ftp://ftp.ncbi.nlm.nih.gov/pub/UniVec/UniVec_Core
+
+# Remember how to count the number of sequences in a fasta file?
+grep -c "^>" UniVec_Core
 
 # Build a blast database
 makeblastdb \
@@ -118,7 +105,20 @@ makeblastdb \
    -title UNIVEC \
    -out UNIVEC \
    -dbtype nucl
+```
+Ok.  So we built a blast database composed of potential contaminating sequences.  Now we need to BLAST our trimmed sequence reads against the database to see if we have matches.  Matches suggest contamination that needs to be removed.  BLAST, however, requires a FASTA input file, and our reads are in fastq format.  So we need to uncompress and convert them into fasta.
 
+```
+# Let us first uncompress the trimmed sequencing reads
+gunzip ERR1938563_1.trimmed.fastq.gz
+gunzip ERR1938563_2.trimmed.fastq.gz
+
+# Now we can use our handy-dandy seqtk toolkit to change the format (sorry about the glitches yesterday).
+seqtk seq -A ERR1938563_1.trimmed.fastq > ERR1938563_1.trimmed.fasta
+seqtk seq -A ERR1938563_2.trimmed.fastq > ERR1938563_2.trimmed.fasta
+```
+Now let's BLAST our reads to look for contamination
+```
 # Blast the forward and reverse sequencing reads
 blastn \
    -query ERR1938563_1.trimmed.fasta \
