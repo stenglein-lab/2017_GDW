@@ -114,8 +114,8 @@ gunzip ERR1938563_1.trimmed.fastq.gz
 gunzip ERR1938563_2.trimmed.fastq.gz
 
 # Now we can use our handy-dandy seqtk toolkit to change the format (sorry about the glitches yesterday).
-seqtk seq -A ERR1938563_1.trimmed.fastq > ERR1938563_1.trimmed.fasta
-seqtk seq -A ERR1938563_2.trimmed.fastq > ERR1938563_2.trimmed.fasta
+~/Desktop/GDW_Apps/seqtk-master/seqtk seq -A ERR1938563_1.trimmed.fastq > ERR1938563_1.trimmed.fasta
+~/Desktop/GDW_Apps/seqtk-master/seqtk seq -A ERR1938563_2.trimmed.fastq > ERR1938563_2.trimmed.fasta
 ```
 Now let's BLAST our reads to look for contamination
 ```
@@ -140,11 +140,11 @@ Here we will count the frequency of various k-mers (i.e., 31-mer) using the tool
 The analysis of k-mers is used in a variety of applications, including estimating genome size, correcting sequencing errors, identifying repetitive elements, etc..
 ```
 # Check dsk usage
-dsk -h
+~/Desktop/GDW_Apps/dsk-v2.2.0-bin-Darwin/bin/dsk -h
 
 # Count 31-mers
-dsk \
-   -file ERR1938563_1.trimmed.fastq.gz,ERR1938563_2.trimmed.fastq.gz \
+~/Desktop/GDW_Apps/dsk-v2.2.0-bin-Darwin/bin/dsk \
+   -file ERR1938563_1.trimmed.fastq,ERR1938563_2.trimmed.fastq \
    -kmer-size 31 \
    -nb-cores 2 \
    -abundance-min 1 \
@@ -153,9 +153,11 @@ dsk \
 
 # Unfortunately, the output is compressed.
 # Parse the output
-dsk2ascii \
+~/Desktop/GDW_Apps/dsk-v2.2.0-bin-Darwin/bin/dsk2ascii \
    -file k31.counts.h5 \
    -out k31.table
+```
+
 
 # Make a histogram input table
 ../dsk-v2.2.0-Source/build/ext/gatb-core/bin/h5dump \
@@ -176,7 +178,8 @@ dsk2ascii \
    tr -d " " | \
    paste - - | \
    gnuplot -p -e 'set term png; set logscale y; plot  "-" with lines lt -1' > k31.png
-```
+   
+   
 Example plot for 31-mer histogram
 X-axis: Number of occurences
 Y-axis: Count
