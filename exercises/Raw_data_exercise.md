@@ -201,7 +201,7 @@ Y-axis: Count
 ![k31](k31.png)  
 A few questions to consider from this plot:
 - Where would you make a cutoff for "true" 31-mers versus "error" 31-mers?
-- Can you estimate the genome size?
+- Can you estimate the genome size?  
 Extra credit for those interested:
 - Repeat at kmer sizes of 15, 21, 27
 - Where may we recommend an error correction threshold?
