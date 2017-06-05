@@ -55,7 +55,7 @@ The result should be two files:
 - ERR1938563_2.fastq.gz
 ```
 # Check the files that are in the present folder
-ls - lh
+ls -lh
 ```
 ## Step 2:  Assess sequence quality using FASTQC
 FASTQC is a useful tool for visualizing the distribution of basic quality metrics such as length, quality, and potential contamination.
