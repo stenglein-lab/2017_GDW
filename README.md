@@ -12,7 +12,7 @@
 
 [Mark's databases lecture](./lectures/Stenglein_databases_lecture.pdf)
 
-[Bob's BLAST lecture]()
+[Bob's BLAST lecture](./lectures/Fitak_GWD2017_Blast.pdf)
 
 [Bob's BLAST exercise](./exercises/Blast_exercise.md)
 
