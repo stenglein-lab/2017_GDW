@@ -37,7 +37,16 @@ Multiple Genome Alignment
 - Selec the Mauve tab
   - Using the default parameters, select OK to align
 - Explore the output
--What do the colors represent?  What does the red line graph represent?
+- What do the colors represent?  What does the red line graph represent?
+- Which parts of genome are more poorly aligned?  Why?
+
+So, it turns out that these felid mitogenomes are not that exciting (sorry Jill).  Let's try and align some other genomes.  
+We will build on the example from yesterday of the two Batrachochytrium fungal genomes.
+- Following the steps above, download the JAM81 and JEL423 Batrachochytrium dendrobatidis genomes.  Hint: (Batrachochytrium[orgn])
+  - How many contigs are there?  Scaffolds? Explore the dataset using the Geneious tools.
+  - How big are the genomes compared with the mitogenomes from the previous work?
+- Align the two scaffold genomes using LastZ as described above.  Much slower, huh?
+
 
 
 
