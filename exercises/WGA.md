@@ -51,6 +51,13 @@ We will build on the example from yesterday of the two Batrachochytrium fungal g
 - Once finished, look at the dot plots for the various alignments.  There is one alignment for each scaffold in the genome used as the "reference".  
   - What do you notice about alignments in long scaffolds versus short scaffolds?
   - What does the overall % simialrity look like?  Are these two genomes very similar?
+- If you are feeling lucky, repeat the alignment using Mauve.... it might finish before the end of this session.  Otherwise, let's move on to one more alignment.
+
+This last section of the WGA Geneious tutorial will align multiple *Yersinia pestis* genomes.
+- Create a new folder inside the "WGA_PRACTICE" folder: Select File -> New -> Folder and let's call it "YERSINIA"
+- Open, or drag and drop, the file "Yersina pestis complete genomes.geneious" from the course datasets on the hard drive into your folder
+- There are many genomes, and even though bacterial, will take too long to align all of them.
+- Select your favorite three *Y. pestis* genomes and align them using Mauve as described above.  Should take ~10 minutes.
 
 
 
