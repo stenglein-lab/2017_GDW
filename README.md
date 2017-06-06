@@ -36,3 +36,6 @@ We will post as much material as possible as soon as possible.  Our intent is to
 
 ### Monday 6/5/17
 [Jill's intro lecture](./lectures/Pecon-Slattery_Introduction_GDW2017.pdf)
+
+### Tuesday 6/6/17
+[Bob's Whole Genome Alignment lecture](./lectures/Fitak_GWD2017_WGA.pdf)
