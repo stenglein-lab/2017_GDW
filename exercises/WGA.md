@@ -58,6 +58,14 @@ This last section of the WGA Geneious tutorial will align multiple *Yersinia pes
 - Open, or drag and drop, the file "Yersina pestis complete genomes.geneious" from the course datasets on the hard drive into your folder
 - There are many genomes, and even though bacterial, will take too long to align all of them.
 - Select your favorite three *Y. pestis* genomes and align them using Mauve as described above.  Should take ~10 minutes.
+- The main things to consider are:
+  - Do you see any rearrangements?  Compare with your neighbor, since not everyone aligned the same three genomes.
+  - How conserved are these genomes?
+  - Are there any regions that have unusally high conservation or synteny? low?  Which genes are in these regions?
+- Finally, think about what are the differences between alignments using LASTZ vs. Mauve.  Which would you use for your data?  Why?
+
+# Part 2:  WGA in [COGE](www.genomeevolution.org/coge)
+
 
 
 
