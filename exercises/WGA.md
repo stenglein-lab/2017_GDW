@@ -75,8 +75,12 @@ The CoGe Consortium and Webtool is a great resource for all sorts of comparative
 - Look at the resulting dotplot.  What do you see?  Much synteny?  Any inversions?  How many?
   - What is the parallel diagonal line way up in the corner?  Take a guess?
 - Scroll to the bottom and repeat the analysis, except change the drop-down menu from "CDS" to "genome"
-- What do you notice?  Why does it look this way? 
-
+- What do you notice?  Why does it look this way?
+- Scroll down, and repeat the analysis but go back to the original "CDS" option for both species
+- If you'd like, you can download results using the links below the graph.
+- There is a link below the plot to "Send to SynMap3D".  Click it!
+- It now asks you for a thirs organism.  Find "Rickettsia africae strain ESF-5" (or any other if you are bold!)
+- Select Next -> Next -> Start (unless you want to change the default parameters)
 
 
 
