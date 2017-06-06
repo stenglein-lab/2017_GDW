@@ -4,7 +4,9 @@
 
 [Course agenda](./GDW2017_Agenda.pdf)
 
-### This page contains links to the lectures and exercises by Mark Stenglein and Bob Fitak for Sunday June 4 and Monday June 5.  
+### This page contains links to course material from GDW 2017
+
+We will post as much material as possible as soon as possible.  Our intent is to leave this material online indefinitely.
 
 ### Sunday 6/4/17
 
