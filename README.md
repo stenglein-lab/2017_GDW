@@ -32,3 +32,5 @@
 
 [Mark's metagenomics lecture](./lectures/Stenglein_metagenomics_lecture.pdf)
 
+### Monday 6/5/17
+[Jill's intro lecture](./lectures/Pecon-Slattery_Introduction_GDW2017.pdf)
