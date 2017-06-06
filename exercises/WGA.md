@@ -1,10 +1,10 @@
-## Whole Genome Alignment Tutorial
+# Whole Genome Alignment Tutorial
 Finally, a break from the command line!
 There are two parts to this tutorial
 - First, we will use Geneious to both view and perform whole genome alignments in several microorganisms
 - Second, an example of using [COGE](https://genomevolution.org/coge/) for various comparative genomics analyses.
 
-# Part 1:  WGA in Geneious
+## Part 1:  WGA in Geneious
 Here, we are going to download, align, and explore mitochondrial genomes from various felids.
 - open Geneious
 - Select File -> New -> Folder and let's call it "WGA_PRACTICE"
@@ -64,7 +64,7 @@ This last section of the WGA Geneious tutorial will align multiple *Yersinia pes
   - Are there any regions that have unusally high conservation or synteny? low?  Which genes are in these regions?
 - Finally, think about what are the differences between alignments using LASTZ vs. Mauve.  Which would you use for your data?  Why?
 
-# Part 2:  WGA in [COGE](https://genomevolution.org/coge/)
+## Part 2:  WGA in [COGE](https://genomevolution.org/coge/)
 The CoGe Consortium and Webtool is a great resource for all sorts of comparative genomics in smaller genomes.  You can use it for larger genomes, but analyses may take more than a reasonable amount of time.  CoGe is expanding rapidly, and now includes some basic raw NGS sequencing tools.  However, it is most powerful when comparing you new genome against many other genomes.  CoGe is tightly linked with the NCBI databases.  We will use different tick-borne rickettsial disease pathogens for our example.  But feel free to choose your favorite organisms.
 - Navigate in Google Chrome to the link above.
 - Select the SynMap "tool" to align two genomes to assess synteny.
@@ -92,8 +92,8 @@ The CoGe Consortium and Webtool is a great resource for all sorts of comparative
   - Click on a pink "block" in the alignment and the syntenic regions will be highlighted.
 - That's all for now.... If you have time, you can also do things like blast (CoGeBlast), or import and trim NGS sequences (if you sign up for a free account).  There are also plenty of tutorials, you tube videos, manuals, etc on the website to provide more information on all the possibilities.  
 
-# I hope you enjoyed this brief introduction to some various ways to align genomes and/or analyze syntenic regions!!!
-# Thanks and get a break!
+## I hope you enjoyed this brief introduction to some various ways to align genomes and/or analyze syntenic regions!!!
+## Thanks and get a break!
 
 
 
