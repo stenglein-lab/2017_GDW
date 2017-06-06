@@ -47,6 +47,7 @@ We will build on the example from yesterday of the two Batrachochytrium fungal g
   - How many contigs are there?  Scaffolds? Explore the dataset using the Geneious tools.
   - How big are the genomes compared with the mitogenomes from the previous work?
 - Align the two scaffold genomes using LastZ as described above.  Much slower, huh?
+  - While waiting, feel free to explore the previous datasets more, or start the COGE example below.
 - Once finished, look at the dot plots for the various alignments.  There is one alignment for each scaffold in the genome used as the "reference".  
   - What do you notice about alignments in long scaffolds versus short scaffolds?
   - What does the overall % simialrity look like?  Are these two genomes very similar?
