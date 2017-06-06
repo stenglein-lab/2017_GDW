@@ -65,6 +65,11 @@ This last section of the WGA Geneious tutorial will align multiple *Yersinia pes
 - Finally, think about what are the differences between alignments using LASTZ vs. Mauve.  Which would you use for your data?  Why?
 
 # Part 2:  WGA in [COGE](https://genomevolution.org/coge/)
+The CoGe Consortium and Webtool is a great resource for all sorts of comparative genomics in smaller genomes.  You can use it for larger genomes, but analyses may take more than a reasonable amount of time.  CoGe is expanding rapidly, and now includes some basic raw NGS sequencing tools.  However, it is most powerful when comparing you new genome against many other genomes.  CoGe is tightly linked with the NCBI databases.  We will use different tick-borne rickettsial disease pathogens for our example.  But feel free to choose your favorite organisms.
+- Navigate in Google Chrome to the link above.
+- Select the SynMap "tool" to align two genomes to assess synteny.
+- In the next window, you can enter search for genomic resources for your favorite species.  The search field will actively find results as you enter text.
+  - For the first species, we will want 
 
 
 
