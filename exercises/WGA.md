@@ -81,7 +81,19 @@ The CoGe Consortium and Webtool is a great resource for all sorts of comparative
 - There is a link below the plot to "Send to SynMap3D".  Click it!
 - It now asks you for a thirs organism.  Find "Rickettsia africae strain ESF-5" (or any other if you are bold!)
 - Select Next -> Next -> Start (unless you want to change the default parameters)
+- You should now have a 3D dotplot.  Use your mouse to move it around.  Anything interesting?
+  - Use the arrows in the upper right to cycle through various graphs of Ka and Ks polymorphisms.
+  - In the lower right are options to change the view of the plot.  You can also download results.
+- Now return to the browser tab with the 2D results.
+- Pick your favorite syntenic region by selecting it with a mouse.
+- Click the 'Compare in GEvo' button that appears in the upper right.
+  - What are the results?
+  - Feel free to explore or download some of the results at the links below the plot.
+  - Click on a pink "block" in the alignment and the syntenic regions will be highlighted.
+- That's all for now.... If you have time, you can also do things like blast (CoGeBlast), or import and trim NGS sequences (if you sign up for a free account).  There are also plenty of tutorials, you tube videos, manuals, etc on the website to provide more information on all the possibilities.  
 
+# I hope you enjoyed this brief introduction to some various ways to align genomes and/or analyze syntenic regions!!!
+# Thanks and get a break!
 
 
 
