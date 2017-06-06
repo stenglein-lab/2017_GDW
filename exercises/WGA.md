@@ -2,7 +2,7 @@
 Finally, a break from the command line!
 There are two parts to this tutorial
 - First, we will use Geneious to both view and perform whole genome alignments in several microorganisms
-- Second, an example of using [COGE](www.genomevolution.org/coge) for various comparative genomics analyses.
+- Second, an example of using [COGE](https://genomevolution.org/coge/) for various comparative genomics analyses.
 
 # Part 1:  WGA in Geneious
 Here, we are going to download, align, and explore mitochondrial genomes from various felids.
@@ -64,7 +64,7 @@ This last section of the WGA Geneious tutorial will align multiple *Yersinia pes
   - Are there any regions that have unusally high conservation or synteny? low?  Which genes are in these regions?
 - Finally, think about what are the differences between alignments using LASTZ vs. Mauve.  Which would you use for your data?  Why?
 
-# Part 2:  WGA in [COGE](www.genomevolution.org/coge)
+# Part 2:  WGA in [COGE](https://genomevolution.org/coge/)
 
 
 
