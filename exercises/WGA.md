@@ -29,7 +29,7 @@ Now let's align two mitogenomes using the LastZ pairwise aligner
   - Using the default parameters, select OK to align
 - Explore the output.
 - The primary visual result is a dotplot. What do you conclude?
-  - A link to the description of dotplots can be found [here](https://en.wikipedia.org/wiki/Dot_plot_(bioinformatics))
+  - A link to the description of dotplots can be found [here](https://en.wikipedia.org/wiki/Dot_plot_(bioinformatics)) or [here](https://assets.geneious.com/manual/10.1/GeneiousManualse38.html)
 - Repeat the above but with two others of your choice.  Anything surprising?
 
 Multiple Genome Alignment
