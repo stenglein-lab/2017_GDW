@@ -69,7 +69,13 @@ The CoGe Consortium and Webtool is a great resource for all sorts of comparative
 - Navigate in Google Chrome to the link above.
 - Select the SynMap "tool" to align two genomes to assess synteny.
 - In the next window, you can enter search for genomic resources for your favorite species.  The search field will actively find results as you enter text.
-  - For the first species, we will want 
+  - For the first species, we will want to find and select "Rickettsia rickettsii strain Sheila Smith"
+  - For the second species, we will want to find and select "Candidatus Rickettsia amblyommii strain GAT-30V"
+- Click on 'Generate Synmap'!
+- Look at the resulting dotplot.  What do you see?  Much synteny?  Any inversions?  How many?
+  - What is the parallel diagonal line way up in the corner?  Take a guess?
+- Scroll to the bottom and repeat the analysis, except change the drop-down menu from "CDS" to "genome"
+- What do you notice?  Why does it look this way? 
 
 
 
