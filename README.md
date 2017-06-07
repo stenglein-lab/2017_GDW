@@ -41,4 +41,4 @@ We will post as much material as possible as soon as possible.  Our intent is to
 [Bob's Whole Genome Alignment lecture](./lectures/Fitak_GWD2017_WGA.pdf)
 
 ### Wednesday 6/7/17
-[Justin's Beast exercise](./exercises/GDW Beast Tutorial.pdf)
+[Justin's Beast exercise]("./exercises/GDW Beast Tutorial.pdf")
