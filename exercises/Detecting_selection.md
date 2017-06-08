@@ -96,8 +96,8 @@ Gd_0.12/gd -s p -w 10000 -S 5000 Spne.fasta > pi.tsv
 ```
 Parameters:
 - -s p : which statistic, p = pi, but you can also calculate Tajima's D (t) or the number of segregating sites (s).
-- -w 10 : the width (or length), in base pairs, of the window
-- -S 5 : the step size of the window (how far to slide each time).
+- -w 10000 : the width (or length), in base pairs, of the window
+- -S 5000 : the step size of the window (how far to slide each time).
 
 Feel free to open the output file to view its contents using your favorite method (using a text editor or commands like "head", "cat", or "less -S"). The output is two columns separated by a tab:
 - column 1: the midpoint of the window
