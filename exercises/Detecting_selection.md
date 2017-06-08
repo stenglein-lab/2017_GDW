@@ -27,6 +27,13 @@ mkdir WINDOW_ANALYSIS
 cd WINDOW_ANALYSIS
 ```
 
+# cool trick:
+If you want to clear your screen to see things easier, enter the command:
+```
+clear
+```
+Don't worry, you can still scroll up to see your previous work.
+
 Awesome!  Now we are in our new folder, and ready to download the program "gd".  You can find the program [here](http://guanine.evolbio.mpg.de/bioBox/).  There are two ways to download this program.  You can click on the link to "gd, v0.12".  The file should automatically be downloaded to your "Downloads" folder.  The other method is to download the file using the "curl" command we learned earlier in the week.
 
 If you used the first method (clicking on the download link) then follow these steps
