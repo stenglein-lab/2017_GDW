@@ -56,4 +56,9 @@ We will post as much material as possible as soon as possible.  Our intent is to
 
 [PAML exercise material](./exercises/PAML%20Exercise.zip)
 
+[Thursday thought exercise](./exercises/Though_exercise.doc)
+
+[Detecting selection exercise](./exercises/Detecting_selection.md)
+
+
 <br><br><img src="./images/gdw_panorama.jpg">
