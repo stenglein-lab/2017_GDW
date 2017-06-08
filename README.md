@@ -2,11 +2,6 @@
 
 <img src="http://gdwworkshop.colostate.edu/media/sites/131/2016/11/GDW.png">
 
-<br>
-
-<img src="./images/gdw_panorama.jpg">
-
-*workshop attendees engaged in hands-on active learning exercises*
 
 
 [Course agenda](./GDW2017_Agenda.pdf)
@@ -53,3 +48,6 @@ We will post as much material as possible as soon as possible.  Our intent is to
 ### Thursday 6/8/17
 [PAML exercise material](./exercises/PAML%20Exercise.zip)
 
+
+
+<br><img src="./images/gdw_panorama.jpg">
