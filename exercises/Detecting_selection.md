@@ -75,7 +75,7 @@ cd ..
 
 # Step 2:
 We need a FASTA alignment file to use to calculate the various statistics.  Download the file 'Spne.fasta.gz' from the github page in the folder 'exercises'.  This file contains an alignment of 15 *Streptococcus pneumoniae* genomes.  The study is by [Croucher et al. 2015 doi:10.1038/sdata.2015.58](https://www.nature.com/articles/sdata201558).
-You can either drag and drop this file into your current folder, or use the following command (assuming you downloaded the file into the 'Downloads' folder.
+You can either drag and drop this file into your current folder, or use the following command (assuming you downloaded the file into the 'Downloads' folder).
 ```
 # Move the file to our current folder
 mv ~/Downloads/Spne.fasta.gz .
@@ -85,7 +85,7 @@ Once you have the file in your folder, we need to uncompress it so it is no long
 # Uncompress
 gunzip Spne.fasta.gz
 ```
-We should be ready for the last step!!!!
+We should now be ready for the last step!!!!
 
 # Step 3:
 In this last step we will finally calculate nucleotide diversity, or pi, across windows of our alignment.  Pi is a measure of genetic variation. It only requires one command to run the analysis in 'gd'.  The parameters we are using are just setting the window size parameters.  The parameters are explained after running the command.  The program 'gd' prints the results to the terminal's screen (also called "stdout"), so we will redirect this output to a new file.  The program is also inside of the folder "Gd_0.12", so we must tell the computer where to find it. 
@@ -115,6 +115,3 @@ So, are there any regions under selection?
 For 0\*(8x10^19) extra credit points, repeat the analysis but calculate Tajima's D.  What would you conclude?  Anything different?  [Here is a link for how to interpret Tajima's D results](https://en.wikipedia.org/wiki/Tajima%27s_D).
 
 ## Thanks everyone!  I hope you enjoyed this tutorial!
-
-
-
