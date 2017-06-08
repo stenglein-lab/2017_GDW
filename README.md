@@ -3,7 +3,6 @@
 <img src="http://gdwworkshop.colostate.edu/media/sites/131/2016/11/GDW.png">
 
 
-
 [Course agenda](./GDW2017_Agenda.pdf)
 
 ### This page contains links to course material from GDW 2017
@@ -12,44 +11,49 @@ We will post as much material as possible as soon as possible.  Our intent is to
 
 ### Sunday 6/4/17
 
-[Mark's Overview Lecture](./lectures/Stenglein_introduction_to_genomics_and_sequencing_lecture.pdf)
+[Introduction to GDW lecture](./lectures/Pecon-Slattery_Introduction_GDW2017.pdf)
 
-[Mark's databases lecture](./lectures/Stenglein_databases_lecture.pdf)
+[Introduction to genomics and sequencing Lecture](./lectures/Stenglein_introduction_to_genomics_and_sequencing_lecture.pdf)
 
-[Bob's BLAST lecture](./lectures/Fitak_GWD2017_Blast.pdf)
+[Introduction to databases and online resources lecture](./lectures/Stenglein_databases_lecture.pdf)
 
-[Bob's BLAST exercise](./exercises/Blast_exercise.md)
+[BLAST lecture](./lectures/Fitak_GWD2017_Blast.pdf)
 
-[Mark's downloading exercise](./exercises/download_exercise.md)
+[BLAST exercise](./exercises/Blast_exercise.md)
+
+[Downloading exercise](./exercises/download_exercise.md)
 
 ### Monday 6/5/17
 
-[Bob's raw data lecture](./lectures/Fitak_GWD2017_NGS-QC.pdf)
+[NGS raw data and QC lecture](./lectures/Fitak_GWD2017_NGS-QC.pdf)
 
-[Bob's raw data exercise](./exercises/Raw_data_exercise.md)
+[NGS raw data and QC exercise](./exercises/Raw_data_exercise.md)
 
-[Bob's mapping lecture](./lectures/Fitak_GWD2017_Mapping.pdf)
+[Sequence mapping lecture](./lectures/Fitak_GWD2017_Mapping.pdf)
 
-[Mark's de novo assembly lecture](./lectures/Stenglein_de_novo_assembly_lecture.pdf)
+[Sequence assembly lecture](./lectures/Stenglein_de_novo_assembly_lecture.pdf)
 
 [Mapping and de novo assembly exercise](./exercises/mapping_assembly_exercise.md)
 
-[Mark's metagenomics lecture](./lectures/Stenglein_metagenomics_lecture.pdf)
-
-### Monday 6/5/17
-[Jill's intro lecture](./lectures/Pecon-Slattery_Introduction_GDW2017.pdf)
+[Metagenomics lecture](./lectures/Stenglein_metagenomics_lecture.pdf)
 
 ### Tuesday 6/6/17
-[Bob's Whole Genome Alignment lecture](./lectures/Fitak_GWD2017_WGA.pdf)
+[Whole Genome Alignment lecture](./lectures/Fitak_GWD2017_WGA.pdf)
 
 ### Wednesday 6/7/17
-[Justin's Beast exercise](./exercises/GDW_Beast_Tutorial.pdf)
+[Sequence alignments: purpose, assessment and application lecture](./lectures/Alignment_talk_GDW2017_Students.pptx)
+
+[Intro to molecular phylogenetics lecture](./lectures/Intro_to_phylogenetics-students.pptx)
+
+[Beast exercise](./exercises/GDW_Beast_Tutorial.pdf)
 
 ### Thursday 6/8/17
-[Bob's Selection lecture](./lectures/Fitak_GWD2017_Selection.pdf)
+[Molecular clocks, gene trees and species trees lecture](./lectures/Molecular_Clock_gene_trees_species_students.pptx)
+
+[Selection lecture](./lectures/Fitak_GWD2017_Selection.pdf)
+
+[Testing for selection in genes](./lectures/Testing_for_selection_in_genes_students.pptx)
 
 [PAML exercise material](./exercises/PAML%20Exercise.zip)
 
-
-
-<br><img src="./images/gdw_panorama.jpg">
+<br><br><img src="./images/gdw_panorama.jpg">
