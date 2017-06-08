@@ -15,7 +15,7 @@ A visual example of a sliding window is available below:
 Let's begin.
 
 ## Step 1: Preparing the software
-We are going to use a quick and easy tool, called "gd", written to calculate various measures of genetic variation (i.e., pi, S [# segregating sites], and Tajima's D) in sliding windows across the alignments.  However, this program is not available yet on your computers.  We will have to download it and install it. It is a relatively simple installation, so I pray it works (my figners are crossed!!!).
+We are going to use a quick and easy tool, called "gd", written to calculate various measures of genetic variation (i.e., pi, S [# segregating sites], and Tajima's D) in sliding windows across the alignments.  However, this program is not available yet on your computers.  We will have to download it and install it. It is a relatively simple installation, so I pray it works (my fingers are crossed!!!).
 ```
 # Let's move to our home folder
 cd ~
