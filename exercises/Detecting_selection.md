@@ -27,7 +27,7 @@ mkdir WINDOW_ANALYSIS
 cd WINDOW_ANALYSIS
 ```
 
-# cool trick:
+## Cool tip:
 If you want to clear your screen to see things easier, enter the command:
 ```
 clear
