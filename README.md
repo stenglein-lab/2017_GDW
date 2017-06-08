@@ -2,6 +2,13 @@
 
 <img src="http://gdwworkshop.colostate.edu/media/sites/131/2016/11/GDW.png">
 
+<br>
+
+<img src="./images/gdw_panorama.jpg">
+
+*workshop attendees engaged in hands-on active learning exercises*
+
+
 [Course agenda](./GDW2017_Agenda.pdf)
 
 ### This page contains links to course material from GDW 2017
