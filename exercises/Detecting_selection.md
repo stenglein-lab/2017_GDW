@@ -1,5 +1,5 @@
 # Detecting Selection
-In this exercise we are going to look for evidence of selection by searching for regions of very low genetic variation.  We will do this by searching an alignment of xxxx genomes using a sliding window.
+In this exercise we are going to look for evidence of selection by searching for regions of very low genetic variation.  We will do this by searching the alignment of xxxx genomes using a sliding window.
 A sliding window means we are going to:
 - start from the beginning of the alignment
 - calculate a parameter for a small region (e.g., 100 bases)
@@ -9,12 +9,10 @@ A sliding window means we are going to:
 - Finally, we can summarize our parameters using basic statistics like histograms, means, standard deviations in your favorite stats program (e.g., R, Excel)
 
 A visual example of a sliding window is available below:
-xxxxx
+![window plot](./windows.png)
 
 
-
-
-You can download the file in FASTA format [here]().  Feel free to open the alignment file in Genious if you want to explore it visually.  To do so you simply open Geneious and drag and drop the file you downloaded into Geneious.  Otherwise, let's begin.
+Let's begin.
 
 ## Step 1: Preparing the software
 We are going to use a quick and easy tool, called "gd", written to calculate various measures of genetic variation (i.e., pi, S [# segregating sites], and Tajima's D) in sliding windows across the alignments.  However, this program is not available yet on your computers.  We will have to download it and install it. It is a relatively simple installation, so I pray it works (my figners are crossed!!!).
