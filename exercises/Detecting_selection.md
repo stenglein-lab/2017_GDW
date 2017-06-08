@@ -1,5 +1,5 @@
 # Detecting Selection
-In this exercise we are going to look for evidence of selection by searching for regions of very low genetic variation.  We will do this by searching the alignment of 15 Streptococcus pneumoniae genomes using a sliding window approach.
+In this exercise we are going to look for evidence of selection by searching for regions of very low genetic variation.  We will do this by searching the alignment of 21 Streptococcus pneumoniae genomes using a sliding window approach.
 A sliding window means we are going to:
 - start from the beginning of the alignment
 - calculate a parameter for a small region (e.g., 100 bases)
@@ -74,7 +74,7 @@ cd ..
 ```
 
 # Step 2:
-We need a FASTA alignment file to use to calculate the various statistics.  Download the file 'Spne.fasta.gz' from the github page in the folder 'exercises'.  This file contains an alignment of 15 *Streptococcus pneumoniae* genomes.  The study is by [Croucher et al. 2015 doi:10.1038/sdata.2015.58](https://www.nature.com/articles/sdata201558).
+We need a FASTA alignment file to use to calculate the various statistics.  Download the file 'Spne.fasta.gz' from the github page in the folder 'exercises'.  This file contains an alignment of 21 *Streptococcus pneumoniae* genomes.  The study is by [Croucher et al. 2015 doi:10.1038/sdata.2015.58](https://www.nature.com/articles/sdata201558).
 You can either drag and drop this file into your current folder, or use the following command (assuming you downloaded the file into the 'Downloads' folder).
 ```
 # Move the file to our current folder
