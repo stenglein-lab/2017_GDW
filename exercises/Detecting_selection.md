@@ -81,10 +81,10 @@ In this last step we will finally calculate nucleotide diversity, or pi, across 
 Here we go....
 ```
 # Run gd!
-Gd_0.12/gd -s t -w 10 -S 5 alignment.fasta > pi.tsv
+Gd_0.12/gd -s p -w 1000 -S 500 alignment.fasta > pi.tsv
 ```
 Parameters:
-- -s t : which statistic, p = pi, but you can also calculate Tajima's D or the number of segregating sites.
+- -s p : which statistic, p = pi, but you can also calculate Tajima's D (t) or the number of segregating sites (s).
 - -w 10 : the width (or length), in base pairs, of the window
 - -S 5 : the step size of the window (how far to slide each time).
 
