@@ -1,5 +1,5 @@
 # Detecting Selection
-In this exercise we are going to look for evidence of selection by searching for regions of very low genetic variation.  We will do this by searching the alignment of xxxx genomes using a sliding window.
+In this exercise we are going to look for evidence of selection by searching for regions of very low genetic variation.  We will do this by searching the alignment of 15 Streptococcus pneumoniae genomes using a sliding window approach.
 A sliding window means we are going to:
 - start from the beginning of the alignment
 - calculate a parameter for a small region (e.g., 100 bases)
