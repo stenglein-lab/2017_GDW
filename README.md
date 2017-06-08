@@ -47,6 +47,7 @@ We will post as much material as possible as soon as possible.  Our intent is to
 
 ### Thursday 6/8/17
 [Bob's Selection lecture](./lectures/Fitak_GWD2017_Selection.pdf)
+
 [PAML exercise material](./exercises/PAML%20Exercise.zip)
 
 
