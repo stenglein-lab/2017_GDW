@@ -16,7 +16,8 @@ xxxxx
 
 You can download the file in FASTA format [here]().  Feel free to open the alignment file in Genious if you want to explore it visually.  To do so you simply open Geneious and drag and drop the file you downloaded into Geneious.  Otherwise, let's begin.
 
-## Step 1: We are going to use a quick and easy tool, called "gd" written to calculate various measures of genetic variation (i.e., pi, S [# segregating sites], and Tajima's D) in sliding windows across the alignments.  However, this program is not available yet on your computers.  We will have to download it and install it. It is a relatively simple installation, so I pray it works (my figners are crossed!!!).
+## Step 1: Preparing the software
+We are going to use a quick and easy tool, called "gd", written to calculate various measures of genetic variation (i.e., pi, S [# segregating sites], and Tajima's D) in sliding windows across the alignments.  However, this program is not available yet on your computers.  We will have to download it and install it. It is a relatively simple installation, so I pray it works (my figners are crossed!!!).
 ```
 # Let's move to our home folder
 cd ~
