@@ -74,7 +74,7 @@ cd ..
 ```
 
 # Step 2:
-We need a FASTA alignment file to use to calculate the various statistics.  Download the file 'Spne.fasta.gz' from the github page in the folder 'exercises'.  This file contains an alignment fo 15 *Streptococcus pneumoniae* genomes.  The study is by [Croucher et al. 2015 doi:10.1038/sdata.2015.58](https://www.nature.com/articles/sdata201558).
+We need a FASTA alignment file to use to calculate the various statistics.  Download the file 'Spne.fasta.gz' from the github page in the folder 'exercises'.  This file contains an alignment of 15 *Streptococcus pneumoniae* genomes.  The study is by [Croucher et al. 2015 doi:10.1038/sdata.2015.58](https://www.nature.com/articles/sdata201558).
 You can either drag and drop this file into your current folder, or use the following command (assuming you downloaded the file into the 'Downloads' folder.
 ```
 # Move the file to our current folder
@@ -92,7 +92,7 @@ In this last step we will finally calculate nucleotide diversity, or pi, across 
 Here we go....
 ```
 # Run gd!
-Gd_0.12/gd -s p -w 1000 -S 500 alignment.fasta > pi.tsv
+Gd_0.12/gd -s p -w 10000 -S 5000 Spne.fasta > pi.tsv
 ```
 Parameters:
 - -s p : which statistic, p = pi, but you can also calculate Tajima's D (t) or the number of segregating sites (s).
@@ -103,7 +103,13 @@ Feel free to open the output file to view its contents using your favorite metho
 - column 1: the midpoint of the window
 - column 2: pi
 
-Your final project, worth 100 points and 100% of your final grade, is to plot the results and find regions that may be under positive selection.  Use your favorite spreadsheet program, like R or Excel.  Plot the window's midpoint (X axis) and pi (Y axis).  I recommend calculating summary statistics, like the mean and standard deviation, to determine if there are any extreme outliers.
+Your final project, worth 100 points and 100% of your final grade, is to plot the results and find regions that may be under positive selection.  Use your favorite spreadsheet program, like R or Excel.  Plot the window's midpoint (X axis) and pi (Y axis).  I recommend calculating summary statistics, like the mean and standard deviation, to determine if there are any extreme outliers.  When plotting, think about whether or not a log axis may be useful...
+If you want to use R, here are the commands (THESE WILL NOT WORK IN UNIX, ONLY IN R)
+```
+# Load the file as two columns
+a=read.table("pi.tsv", sep="\t", header=F)
+plot(a$V1,a$V2, log="y", type="l")
+```
 
 So, are there any regions under selection?
 For 0\*(8x10^19) extra credit points, repeat the analysis but calculate Tajima's D.  What would you conclude?  Anything different?  [Here is a link for how to interpret Tajima's D results](https://en.wikipedia.org/wiki/Tajima%27s_D).
