@@ -66,8 +66,17 @@ make
 cd ..
 ```
 
+# Step 2:
+We need a FASTA alignment file to use to calculate the various statistics.
 
-
+# Step 3:
+In this last step we will finally calculate nucleotide diversity, or pi, across windows of our alignment.  Pi is a measure of genetic variation. It only requires one command to run the analysis in 'gd'.  The parameters we are using are just setting the window size parameters.  The parameters are explained after running the command.  The program 'gd' prints the results to the terminal's screen (also called "stdout"), so we will redirect this output to a new file.  The program is also inside of the folder "Gd_0.12", so we must tell the computer where to find it. 
+Here we go....
+```
+# Run gd!
+Gd_0.12/gd -s t -w 10 -S 5 alignment.fasta > pi.tsv
+```
+Feel free to open the output file to view its contents using your favorite method (using a text editor or commands like "head", "cat", or "less -S"). 
 
 
 
