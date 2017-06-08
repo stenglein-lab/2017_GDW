@@ -42,3 +42,7 @@ We will post as much material as possible as soon as possible.  Our intent is to
 
 ### Wednesday 6/7/17
 [Justin's Beast exercise](./exercises/GDW_Beast_Tutorial.pdf)
+
+### Thursday 6/8/17
+[PAML exercise material](./exercises/PAML%20Exercise.zip)
+
