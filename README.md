@@ -1,4 +1,4 @@
-## Genomics of Disease in Wildlife Workshop, Summery 2017
+## Genomics of Disease in Wildlife Workshop, Summer 2017
 
 <img src="http://gdwworkshop.colostate.edu/media/sites/131/2016/11/GDW.png">
 
