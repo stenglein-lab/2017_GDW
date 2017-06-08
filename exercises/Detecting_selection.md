@@ -76,7 +76,21 @@ Here we go....
 # Run gd!
 Gd_0.12/gd -s t -w 10 -S 5 alignment.fasta > pi.tsv
 ```
-Feel free to open the output file to view its contents using your favorite method (using a text editor or commands like "head", "cat", or "less -S"). 
+Parameters:
+- -s t : which statistic, p = pi, but you can also calculate Tajima's D or the number of segregating sites.
+- -w 10 : the width (or length), in base pairs, of the window
+- -S 5 : the step size of the window (how far to slide each time).
+
+Feel free to open the output file to view its contents using your favorite method (using a text editor or commands like "head", "cat", or "less -S"). The output is two columns separated by a tab:
+- column 1: the midpoint of the window
+- column 2: pi
+
+Your final project, worth 100 points and 100% of your final grade, is to plot the results and find regions that may be under positive selection.  Use your favorite spreadsheet program, like R or Excel.  Plot the window's midpoint (X axis) and pi (Y axis).  I recommend calculating summary statistics, like the mean and standard deviation, to determine if there are any extreme outliers.
+
+So, are there any regions under selection?
+For 0\*(8x10^19) extra credit points, repeat the analysis but calculate Tajima's D.  What would you conclude?  Anything different?  [Here is a link for how to interpret Tajima's D results](https://en.wikipedia.org/wiki/Tajima%27s_D).
+
+## Thanks everyone!  I hope you enjoyed this tutorial!
 
 
 
