@@ -1,5 +1,5 @@
 # Detecting Selection
-In this exercise we are going to look for evidence of selection by searching for regions of very low genetic variation.  We will do this by searching the alignment of 15 Streptococcus pneumoniae genomes using a sliding window approach.
+In this exercise we are going to look for evidence of selection by searching for regions of very low genetic variation.  We will do this by searching the alignment of 21 Streptococcus pneumoniae genomes using a sliding window approach.
 A sliding window means we are going to:
 - start from the beginning of the alignment
 - calculate a parameter for a small region (e.g., 100 bases)
@@ -74,7 +74,7 @@ cd ..
 ```
 
 # Step 2:
-We need a FASTA alignment file to use to calculate the various statistics.  Download the file 'Spne.fasta.gz' from the github page in the folder 'exercises'.  This file contains an alignment of 15 *Streptococcus pneumoniae* genomes.  The study is by [Croucher et al. 2015 doi:10.1038/sdata.2015.58](https://www.nature.com/articles/sdata201558).
+We need a FASTA alignment file to use to calculate the various statistics.  Download the file 'Spne.fasta.gz' from the github page in the folder 'exercises'.  This file contains an alignment of 21 *Streptococcus pneumoniae* genomes.  The study is by [Croucher et al. 2015 doi:10.1038/sdata.2015.58](https://www.nature.com/articles/sdata201558).
 You can either drag and drop this file into your current folder, or use the following command (assuming you downloaded the file into the 'Downloads' folder).
 ```
 # Move the file to our current folder
@@ -96,8 +96,8 @@ Gd_0.12/gd -s p -w 10000 -S 5000 Spne.fasta > pi.tsv
 ```
 Parameters:
 - -s p : which statistic, p = pi, but you can also calculate Tajima's D (t) or the number of segregating sites (s).
-- -w 10 : the width (or length), in base pairs, of the window
-- -S 5 : the step size of the window (how far to slide each time).
+- -w 10000 : the width (or length), in base pairs, of the window
+- -S 5000 : the step size of the window (how far to slide each time).
 
 Feel free to open the output file to view its contents using your favorite method (using a text editor or commands like "head", "cat", or "less -S"). The output is two columns separated by a tab:
 - column 1: the midpoint of the window
