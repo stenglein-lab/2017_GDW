@@ -119,3 +119,32 @@ First, you need to get your reference sequence into Geneious, preferably with an
   - Can you identify any ends that should have been trimmed but weren't?  (I.e. that contain super crappy basecalls?)
   - Can you identify any ends that might have been inappropriately soft-trimmed (the trimming of which could have artifically decreased variant allele frequencies?)
 
+
+
+### To download all the content from the GitHub site to your external disk drive
+
+*To have a copy of all the material to take home with you.*
+
+```
+# change directory to your external hard drive
+cd /Volumes/GDWDrive/     
+
+# 'clone' the repository (download a copy)
+git clone https://github.com/stenglein-lab/2017_GDW.git
+```
+
+This will create a new directory on your external drive named 2017_GDW with all the course material that's on the github repository.
+
+If the GitHub site gets updated, you can update your local copy using the `git pull` command
+
+```
+# change directory to the GDW_2017 directory in your external hard drive
+cd /Volumes/GDWDrive/2017_GDW/
+
+# update the repository using pull command
+git pull
+```
+
+You can also download the entire repository directly from the github site (as a .zip file), and our intent is to leave this site up indefinitely.
+
+
