@@ -78,7 +78,7 @@ samtools view -b Pool_reads_aligned_to_viral_genome.sam > Pool_reads_aligned_to_
 samtools sort -T tmp -O 'bam' Pool_reads_aligned_to_viral_genome.bam  > Pool_reads_aligned_to_viral_genome.sorted.bam
 ```
 
-Now, we'll run lofreq.  To see usage info:
+Now, we'll run lofreq.  To learn more about how you could run lofreq, run:
 ```
 ./lofreq         # show general usage info
 ./lofreq call    # show general usage info for the call command in lofreq (actually does variant calling)
