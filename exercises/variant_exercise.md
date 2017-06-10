@@ -123,7 +123,7 @@ First, you need to get your reference sequence into Geneious, preferably with an
 
 ### To download all the content from the GitHub site to your external disk drive
 
-*To have a copy of all the material to take home with you.*
+To have a copy of all the material to take home with you.
 
 ```
 # change directory to your external hard drive
