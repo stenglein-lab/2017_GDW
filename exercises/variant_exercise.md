@@ -10,11 +10,17 @@ The data we'll use was generated from a pool of _Anopheles gambiae_ mosquitoes c
 We will:
 
 - download the files we need
-- make 
+- make a bowtie index from the viral genome (reference) sequence
+- map reads to the reference sequence using bowtie2
+- use lofreq to call variants
+- inspect variants in vcf output file and in Geneious
+
 
 ### Download files needed for exercise from github
 
-Open a terminal and change directory to a directory of your choosing
+First, we need to download some files.
+
+Open the terminal and change directory to a directory of your choosing or stay where you are.
 
 The files for this exercise are in the GitHub repository.  You can download them using this command:
 
@@ -22,7 +28,9 @@ The files for this exercise are in the GitHub repository.  You can download them
 curl -O https://raw.githubusercontent.com/stenglein-lab/2017_GDW/master/exercises/variant_exercise_files.tar.gz
 ```
 
-The file extension .tar.gz is similar to .zip.  It means this is a compressed set of files.  You'll often run across this type of file when you're downloading data or software.  You can unzip and extract it using the tar command, as follows:
+The file extension `.tar.gz` is similar to .zip.  It means this is a compressed set of files.  
+
+You'll often run across `.tar.gz` files when you're downloading data or software.  You can uncompress and extract this file using the tar command, as follows:
 
 ```
 tar xvzf variant_exercise_files.tar.gz
@@ -56,7 +64,7 @@ Now that we've created the index, we can map reads to it.  We'll use bowtie2 to 
    --no-unal --threads 4 -S Pool_reads_aligned_to_viral_genome.sam
 ```
 
-### Using freebayes to call variants
+### Using lofreq to call variants
 
 Now we have mapped reads.  There are a variety of variant callers (see review articles cited in lecture).  We'll use the [lofreq](http://csb5.github.io/lofreq/) variant caller, because it is pretty easy to use and has performed reasonably well in benchmarking comparisons.
 
@@ -104,4 +112,5 @@ Some questions to consider:
 - Do variant frequencies match between Geneious and the VCF file?
 - Can you identify linked variants?  How far apart can you identify linked variants?
 - Are any of the variants non-synonymous?
+- Are these intrahost or interhost variants?
 
