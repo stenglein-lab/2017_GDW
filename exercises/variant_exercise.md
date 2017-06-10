@@ -13,7 +13,7 @@ We will:
 - make a bowtie index from the viral genome (reference) sequence
 - map reads to the reference sequence using bowtie2
 - use lofreq to call variants
-- inspect variants in vcf output file and in Geneious
+- visualize and inspect variants in vcf output file and in Geneious
 
 
 ### Download files needed for exercise from github
@@ -100,7 +100,7 @@ Questions to consider:
 - Is linkage between variants described?
 - Are the variants SNPs, or InDels?  Would you expect to see InDel variants here?
 
-### Time permitting: Inspect mapped reads in Geneious and inspect mapped data supporting called variants
+### Time permitting: Visualize and inspect mapped data supporting called variants in Geneious
 
 First, you need to get your reference sequence into Geneious, preferably with annotations.  Then you need to bring in the mapped reads (can bring in .sam or .bam format)
 
@@ -108,7 +108,7 @@ First, you need to get your reference sequence into Geneious, preferably with an
 2. Drag and drop the Pool_reads_aligned_to_viral_genome.sorted.bam file into the same folder in Geneious.  (Tip: select the viral_genome first, then select "Use one of the selected sequences" when it asks you to locate the reference sequence).
 
 
-Some questions to consider:
+**Some questions to consider:**
 - Can you identify variants called in your VCF file?  (*Note:* numbering differs between the consensus sequence and the reference sequence in Geneious.  #s in the VCF file correspond to reference sequence positions).
 - Do variant frequencies match between Geneious and the VCF file?
 - Can you identify linked variants?  How far apart can you identify linked variants?
