@@ -69,5 +69,6 @@ Coming soon
 [Intrahost and pooled variation lecture](./lectures/Stenglein_intrahost_variants.pdf)
 
 [Intrahost variation exercise](./exercises/variant_exercise.md)
+[Horizon Scan Exercise](./Horizon_Scan_Questions.pdf)
 
 <br><br><img src="./images/gdw_panorama.jpg">
