@@ -56,7 +56,7 @@ We're going to use bowtie2 to map reads in the dataset to the viral genome.  Fir
 
 ### Mapping reads in the dataset to the viral genome sequence 
 
-Now that we've created the index, we can map reads to it.  We'll use bowtie2 to do this, as followws
+Now that we've created the index, we can map reads to it.  We'll use [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml) to do this, as follows
 
 ```
 ~/Desktop/GDW_Apps/bowtie2/bowtie2 -x viral_genome_bt_index \
