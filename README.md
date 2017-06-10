@@ -60,5 +60,14 @@ We will post as much material as possible as soon as possible.  Our intent is to
 
 [Detecting selection exercise](./exercises/Detecting_selection.md)
 
+### Friday 6/9/17
+
+Coming soon
+
+### Saturday 6/10/17
+
+[Intrahost and pooled variation lecture](./lectures/Stenglein_intrahost_variants.pdf)
+
+[Intrahost variation exercise](./exercises/variant_exercise.md)
 
 <br><br><img src="./images/gdw_panorama.jpg">
