@@ -28,12 +28,13 @@ The file extension .tar.gz is similar to .zip.  It means this is a compressed se
 tar xvzf variant_exercise_files.tar.gz
 ```
 
-You should now see 4 new file:
+You should now see 5 new file (run the `ls` command):
 ```
 Pool_filtered_R1.fastq   # paired read files containing already trimmed reads in FASTQ format
 Pool_filtered_R2.fastq
 viral_genome.fasta       # viral genome in FASTA format
 viral_genome.gb          # viral genome in GenBank (annotated) format
+lofreq                   # the variant caller we'll use
 ```
 
 ### Create a bowtie index from the viral genome sequence
@@ -57,7 +58,7 @@ Now that we've created the index, we can map reads to it.  We'll use bowtie2 to 
 
 ### Using freebayes to call variants
 
-Now we have mapped reads.  There are a variety of variant callers (see review articles cited in lecture).  We'll use [freebayes](http://arxiv.org/abs/1207.3907) [software](https://github.com/ekg/freebayes) because it is pretty easy to use and performed well in benchmarking comparisons.
+Now we have mapped reads.  There are a variety of variant callers (see review articles cited in lecture).  We'll use the [lofreq](http://csb5.github.io/lofreq/) variant caller, because it is pretty easy to use and has performed reasonably well in benchmarking comparisons.
 
 Most variant callers take as input sorted .bam format files, which are a compressed, sorted version of sam files.  We'll use the samtools program to convert our .sam output file from bowtie to .bam format:
 
@@ -69,118 +70,38 @@ samtools view -b Pool_reads_aligned_to_viral_genome.sam > Pool_reads_aligned_to_
 samtools sort -T tmp -O 'bam' Pool_reads_aligned_to_viral_genome.bam  > Pool_reads_aligned_to_viral_genome.sorted.bam
 ```
 
-Now, we'll run freebayes.  To see usage info:
+Now, we'll run lofreq.  To see usage info:
 ```
-~/Desktop/GDW_Apps/freebayes/bin/freebayes -help
-```
-
-To call variants:
-
-
-### Visualizing aligned (mapped) reads in Geneious
-
-Geneious provides a nice graphical interface for visualizing the aligned reads described in your SAM file.   Other tools for visualizing this kind of data include [IGV](http://software.broadinstitute.org/software/igv/) and [Tablet](https://ics.hutton.ac.uk/tablet/)
-
-First, you need to have your reference sequence in Geneious, preferably with annotations.  You can do this 2 ways:
-
-1. Drag and drop the boa_mtDNA.gb file into a folder in Geneious
-2. Download the file directly into Genious, using the NCBI->Nucleotide interface (search for NC_007398.1).  Once downloaded, drag from the NCBI download folder into another folder in Geneious.  
-
-Once you have the boa constrictor mitochondrial genome in a folder in Geneious, you can drag and drop the SAM file that bowtie2 output into the same folder.  Geneious will tell you that it 'can't find the sequence it needs in the selected file'.  It is telling you it is trying to find the reference sequence to which you aligned reads.  Answer: 'Find a sequence with the same name in this Geneious folder' or 'Use one of the selected sequences' (after selecting the boa mtDNA sequence).
-
-- A few Geneious tips:
-  - Enlarge the Geneious window so that it fills the screen
-  - Click View->Expand Document View to enlarge the alignment
-  - Try playing with the visualization settings in the panels on the right of the alignment
-
-- Some questions to consider when viewing the alignment:
-  - Is the coverage even across the mitochondrial genome?  What is the average coverage?
-  - This is essentially RNA-Seq data.  Are the mitochondrial genes expressed evenly?  How does this relate to coverage?
-  - Are there any variants between this snake's mitochondrial genome sequence and the boa constrictor reference sequence?  Is that expected?
-    - Can you distinguish true variants from sequencing errors?
-  - Is it possible that reads that derive from other parts of the boa constrictor genome are mapping here?  How would you prevent that?
-  - Can you identify mapped read pairs?  
-
-
-### De-novo assembly of non-mapping reads
-
-OK, now we've practiced mapping to a reference sequence.  Imagine instead that we don't have a reference sequence.  In that case, we'd need to perform de novo assembly.  
-
-There are a variety of de novo assemblers with different strengths and weaknesses.  We're going to use the [SPAdes assembler](http://cab.spbu.ru/software/spades/) to assemble the reads in our dataset that don't map to the boa constrictor genome. First, let's map the reads in our dataset to the _entire_ boa constrictor genome, not just the mitochondrial genome.
-
-The instructors have already downloaded an assembly of the boa constrictor genome from [here](http://gigadb.org/dataset/100060) and made a bowtie2 index, which can be found on your HDDs.  We could have you make an index yourself, but that would take a long time for a Gb genome like the boa constrictor's.  The boa constrictor genome index is named boa_constrictor_bt_index.
-
-First, let's transfer the bowtie index from the HDD to your working folder:
-```
-# UPDATED AGAIN! :)
-cp /Volumes/GDWDrive/Files/MarkS/Mapping_Assembly/boa_constrictor_bt_index* .
+./lofreq         # show general usage info
+./lofreq call    # show general usage info for the call command in lofreq (actually does variant calling)
 ```
 
-Now, we'll run bowtie2 to map reads to the entire boa genome.  This time we'll run bowtie2 a little differently:
-1. We'll run bowtie2 in [local mode](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#end-to-end-alignment-versus-local-alignment), which is a more permissive mapping mode that doesn't require the ends of the reads to map
-2. We'll keep track of which reads _didn't_ map to the genome using the --un-conc option
-
+To call variants, you tell lofreq the name of the reference sequence (-f option), the name of the sorted bam file, and the name of the output file that will be created (-o option).  The output is in [VCF format](https://samtools.github.io/hts-specs/VCFv4.3.pdf):
 ```
-~/Desktop/GDW_Apps/bowtie2/bowtie2 -x boa_constrictor_bt_index --local \
-   -q -1 SRR1984309_1_trimmed.fastq  -2 SRR1984309_2_trimmed.fastq \
-   --no-unal --threads 4 -S SRR1984309_mapped_to_boa_genome.sam --un-conc SRR1984309_not_boa_mapped.fastq
+./lofreq call -f viral_genome.fasta Pool_reads_aligned_to_viral_genome.sorted.bam -o Pool_reads_aligned_to_viral_genome.vcf
 ```
 
-You should see that 90% of the reads aligned to the boa constrictor genome sequence, leaving 10% in the files that contain the non-mapping reads: SRR1984309_not_boa_mapped.1.fastq and ....2.fastq
-
-How many non-mapping reads remain in these files?
-
-We will use these non-mapping reads as input to our de novo SPAdes assembly.  Run SPAdes as follows:
-
+Use less or cat to inspect the contents of your vcf file.  
 ```
-~/Desktop/GDW_Apps/SPAdes/bin/spades.py   -o SRR1984309_spades_assembly \
-   --pe1-1 SRR1984309_not_boa_mapped.1.fastq \
-   --pe1-2 SRR1984309_not_boa_mapped.2.fastq \
-   -m 12 -t 4
+less Pool_reads_aligned_to_viral_genome.vcf
 ```
+Questions to consider:
+- Does the VCF file make sense?  
+- How many variants were identified?
+- What are their allele frequencies?
+- Is linkage between variants described?
 
-Command line options explained:
-```
-~/Desktop/GDW_Apps/SPAdes/bin/spades.py   
-   -o SRR1984309_spades_assembly \         # name of directory (folder) where SPAdes output will go
-   --pe1-1 SRR1984309_not_boa_mapped.1.fastq \   # name of read1 input file
-   --pe1-2 SRR1984309_not_boa_mapped.2.fastq \   # name of read2 input file
-   -m 12 -t 4                    # use 12 Gb of RAM and 4 cores 
-```
+### Time permitting: Inpsect mapped reads in Geneious and inspect mapped data supporting called variants
 
-SPAdes will output a bunch of status messages to the screen as it runs the assembly.  Can you tell what the different assembly steps are?
+First, you need to have your reference sequence in Geneious, preferably with annotations.  
 
-After SPAdes finishes, there will be output files in the `SRR1984309_spades_assembly` folder.  The key ones are:
-
-- contigs.fasta:   the assembled contigs in FASTA format
-- scaffolds.fasta: scaffolds in FASTA format
-- assembly_graph.fastg:   de bruijn graphs used to create contigs.  Can be visualized using a tool like [Bandage](https://rrwick.github.io/Bandage/)
-
-Let's look at the contigs in contigs.fasta.  Navigate to that file in the Finder and open it using a text editor like TextWrangler or TextEdit.
-
-The contigs are sorted in order of length.  Recall that these are contigs made from the reads that _didn't_ map to the boa constrictor genome. Let's try to figure out what some of the contigs are.
-
-Copy the first 3 contigs (the 3 longest contigs) and open a browser, navigate to the [NCBI blastn page](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome), and paste the sequences of the first 3 contigs into the search field.  Make sure that the megablast option is selected, and run the BLAST.  
-
-- What are the sequences?  Are you confident in your conclusions?  Do they make sense?
+1. Drag and drop the viral_genome.gb file into a folder in Geneious
+2. Drag and drop the Pool_reads_aligned_to_viral_genome.sorted.bam file into the same folder in Geneious.  (Tip: select the viral_genome first, then select "Use one of the selected sequences" when it asks you to locate the reference sequence).
 
 
-#### Additional, time-permitting exercises 
+Some questions to consider:
+- Can you identify variants called in your VCF file?  (*Note:* numbering differs between the consensus sequence and the reference sequence.  #s in the VCF file correspond to reference sequence positions).
+- Do variant frequencies match between Geneious and the VCF file?
+- Can you identify linked variants?  How far apart can you identify linked variants?
+- Are any of the variants non-synonymous?
 
-**1. Assembly validation:**
-
-To quote [Miller et al](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2874646/), these contigs are only "putative reconstructions" of the sequences from which the reads derived.  How could we validate these sequences as being accurate?
-
-One way would be to use another sequencing technology, like PCR and Sanger sequencing.
-
-Another way to validate an assembly is to re-map reads back to it using a mapping tool like bowtie.  This might reveal errors in the assembly, or mis-assemblies.  
-
-If time permits, use what you've learned and re-map reads back to these contigs.  To do this, you'll have to create a new bowtie index (e.g. of the 1st 2 or 3 contigs) using bowtie2-build, then use bowtie2 to map reads.  Then you can visualize the aligned reads in Geneious.  Can you find any problems with the assemblies?
-
-**2. Sequence annotation**
-
-Another thing you could do is annotate the virus contigs.  Geneious is a great tool for doing things like finding ORFs in sequences and adding annotations, that can then be exported in GenBank format.
-
-**3. Assemble the entire datasets**
-
-You could also try assembling all of the reads in the datasets, not just the ones that didn't map to the boa constrictor genome.  This will take longer, but should be doable in a minute or two on your laptops.  What are the top contigs now?  What happened to the virus contigs?
