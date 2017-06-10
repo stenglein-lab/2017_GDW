@@ -98,6 +98,7 @@ Questions to consider:
 - How many variants were identified?
 - What are their allele frequencies?
 - Is linkage between variants described?
+- Are the variants SNPs, or InDels?  Would you expect to see InDel variants here?
 
 ### Time permitting: Inpsect mapped reads in Geneious and inspect mapped data supporting called variants
 
