@@ -109,7 +109,7 @@ First, you need to get your reference sequence into Geneious, preferably with an
 
 
 Some questions to consider:
-- Can you identify variants called in your VCF file?  (*Note:* numbering differs between the consensus sequence and the reference sequence.  #s in the VCF file correspond to reference sequence positions).
+- Can you identify variants called in your VCF file?  (*Note:* numbering differs between the consensus sequence and the reference sequence in Geneious.  #s in the VCF file correspond to reference sequence positions).
 - Do variant frequencies match between Geneious and the VCF file?
 - Can you identify linked variants?  How far apart can you identify linked variants?
 - Are any of the variants non-synonymous?
