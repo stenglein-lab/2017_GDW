@@ -100,9 +100,9 @@ Questions to consider:
 - Is linkage between variants described?
 - Are the variants SNPs, or InDels?  Would you expect to see InDel variants here?
 
-### Time permitting: Inpsect mapped reads in Geneious and inspect mapped data supporting called variants
+### Time permitting: Inspect mapped reads in Geneious and inspect mapped data supporting called variants
 
-First, you need to have your reference sequence in Geneious, preferably with annotations.  
+First, you need to get your reference sequence into Geneious, preferably with annotations.  Then you need to bring in the mapped reads (can bring in .sam or .bam format)
 
 1. Drag and drop the viral_genome.gb file into a folder in Geneious
 2. Drag and drop the Pool_reads_aligned_to_viral_genome.sorted.bam file into the same folder in Geneious.  (Tip: select the viral_genome first, then select "Use one of the selected sequences" when it asks you to locate the reference sequence).
@@ -114,4 +114,8 @@ Some questions to consider:
 - Can you identify linked variants?  How far apart can you identify linked variants?
 - Are any of the variants non-synonymous?
 - Are these intrahost or interhost variants?
+- Can you identify any InDel variants that _should_ have been called that weren't? (Hint: look near the beginning of the reference sequence.)
+- We ran bowtie2 in end-to-end mode, which doesn't permit soft-trimming of read ends.  
+  - Can you identify any ends that should have been trimmed but weren't?  (I.e. that contain super crappy basecalls?)
+  - Can you identify any ends that might have been inappropriately soft-trimmed (the trimming of which could have artifically decreased variant allele frequencies?)
 
