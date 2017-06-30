@@ -70,4 +70,6 @@ Coming soon
 
 [Intrahost variation exercise](./exercises/variant_exercise.md)
 
+[Horizon Scan Exercise](./Horizon_Scan_Questions.pdf)
+
 <br><br><img src="./images/gdw_panorama.jpg">
